@@ -1,3 +1,3 @@
 class BlogSerializer < ActiveModel::Serializer
-  attributes :id,:title,:body,:published_Date,:is_active,:is_delete
+  attributes :id,:title,:body,:published_Date,:is_active,:is_delete,:view_count 
 end
