@@ -1,0 +1,1159 @@
+  [1m[35m (220.1ms)[0m  [1m[35mCREATE DATABASE "backend_authentication_development" ENCODING = 'unicode'[0m
+  [1m[35m (77.4ms)[0m  [1m[35mCREATE DATABASE "backend_authentication_test" ENCODING = 'unicode'[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220628144729)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "username" character varying NOT NULL, "email" character varying NOT NULL, "phone" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220628144729"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-06-28 14:48:57.839431"], ["updated_at", "2022-06-28 14:48:57.839431"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users%0A" for 127.0.0.1 at 2022-06-28 20:47:38 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users%0A"):
+  
+Started POST "/users%0A" for 127.0.0.1 at 2022-06-28 20:48:11 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users%0A"):
+  
+Started POST "/users%0A" for 127.0.0.1 at 2022-06-28 20:51:45 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users%0A"):
+  
+Started POST "//users%0A" for 127.0.0.1 at 2022-06-28 20:52:12 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/users%0A"):
+  
+Started GET "/users%0A/" for 127.0.0.1 at 2022-06-28 20:53:21 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users%0A"):
+  
+Started POST "/users%0A/" for 127.0.0.1 at 2022-06-28 20:53:30 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/users%0A"):
+  
+Started POST "//users%0A" for ::1 at 2022-06-28 20:54:46 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/users%0A"):
+  
+Started POST "//users%0A?name=Harsh&username=Harsh2306&email=harsh@gmail.com&phone=8141283730" for ::1 at 2022-06-28 20:55:40 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/users%0A"):
+  
+Started POST "//users%0A?name=Harsh&username=Harsh2306&email=harsh@gmail.com&phone=8141283730" for ::1 at 2022-06-28 20:57:06 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users%0A"):
+  
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users%0A?name=Harsh&username=Harsh2306&phone=8141283730&email=harsh@gmail.com&password=[FILTERED]" for 127.0.0.1 at 2022-06-28 21:00:50 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users%0A"):
+  
+Started POST "/users%0A" for 127.0.0.1 at 2022-06-28 21:06:44 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/users%0A"):
+  
+Started POST "/users%0A" for 127.0.0.1 at 2022-06-28 21:08:35 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/users%0A"):
+  
+Started POST "/users" for 127.0.0.1 at 2022-06-28 21:14:03 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/aglowid/ror/backend_authentication/app/controllers/users_controller.rb:32: syntax error, unexpected ':', expecting `end'
+             status: :unprocessable_entity
+                   ^
+):
+  
+app/controllers/users_controller.rb:32: syntax error, unexpected ':', expecting `end'
+app/controllers/users_controller.rb:32: syntax error, unexpected ':', expecting `end'
+Started POST "/users" for 127.0.0.1 at 2022-06-28 21:14:48 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+[31mUnpermitted parameter: :password. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f28fc29fc80>, params: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.3ms | Allocations: 24926)
+
+
+  
+NoMethodError (undefined method `password_digest' for #<User id: nil, name: "Harsh", username: "Harsh2306", email: "harsh@gmail.com", phone: "8141283730", created_at: nil, updated_at: nil>
+Did you mean?  password):
+  
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/users" for 127.0.0.1 at 2022-06-28 21:15:27 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+[31mUnpermitted parameter: :password. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f39d087fa08>, params: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 2.7ms | Allocations: 24097)
+
+
+  
+NoMethodError (undefined method `password_digest' for #<User id: nil, name: "Harsh", username: "Harsh2306", email: "harsh@gmail.com", phone: "8141283730", created_at: nil, updated_at: nil>
+Did you mean?  password):
+  
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/users" for 127.0.0.1 at 2022-06-28 21:15:42 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password_digest"=>"[FILTERED]"}
+[31mUnpermitted parameter: :password_digest. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f39c00ea140>, params: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password_digest"=>"[FILTERED]", "controller"=>"users", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 2482)
+
+
+  
+NoMethodError (undefined method `password_digest' for #<User id: nil, name: "Harsh", username: "Harsh2306", email: "harsh@gmail.com", phone: "8141283730", created_at: nil, updated_at: nil>
+Did you mean?  password):
+  
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/users" for 127.0.0.1 at 2022-06-28 21:17:14 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password_digest"=>"[FILTERED]"}
+[31mUnpermitted parameter: :password_digest. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f39c0b66d30>, params: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password_digest"=>"[FILTERED]", "controller"=>"users", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.0ms | Allocations: 6035)
+
+
+  
+NoMethodError (undefined method `password' for #<User id: nil, name: "Harsh", username: "Harsh2306", email: "harsh@gmail.com", phone: "8141283730", created_at: nil, updated_at: nil>):
+  
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/users" for 127.0.0.1 at 2022-06-28 21:17:31 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+[31mUnpermitted parameter: :password. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f39cc017900>, params: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3285)
+
+
+  
+NoMethodError (undefined method `password' for #<User id: nil, name: "Harsh", username: "Harsh2306", email: "harsh@gmail.com", phone: "8141283730", created_at: nil, updated_at: nil>):
+  
+app/controllers/users_controller.rb:20:in `create'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToUser (20220628154912)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220628154912"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for 127.0.0.1 at 2022-06-28 21:20:34 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+[31mUnpermitted parameter: :password. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f866443dec8>, params: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Harsh2306"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 422 Unprocessable Entity in 74ms (Views: 1.8ms | ActiveRecord: 3.9ms | Allocations: 29268)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-06-28 21:21:42 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Harsh2306"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "phone", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Harsh"], ["username", "Harsh2306"], ["email", "harsh@gmail.com"], ["phone", "8141283730"], ["created_at", "2022-06-28 15:51:43.205863"], ["updated_at", "2022-06-28 15:51:43.205863"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 4.3ms | Allocations: 6357)
+
+
+  
+ArgumentError (Unrecognized status code :Created):
+  
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for 127.0.0.1 at 2022-06-28 21:22:02 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Harsh2306"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 422 Unprocessable Entity in 213ms (Views: 0.4ms | ActiveRecord: 4.2ms | Allocations: 5974)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-06-28 21:22:36 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Harsh", "username"=>"Harsh_Patel", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Harsh_Patel"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "phone", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Harsh"], ["username", "Harsh_Patel"], ["email", "harsh@gmail.com"], ["phone", "8141283730"], ["created_at", "2022-06-28 15:52:36.348178"], ["updated_at", "2022-06-28 15:52:36.348178"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 201 Created in 212ms (Views: 8.9ms | ActiveRecord: 2.2ms | Allocations: 6347)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2022-06-28 21:24:26 +0530
+  
+SyntaxError (/home/aglowid/ror/backend_authentication/app/controllers/authentication_controller.rb:15: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/authentication_controller.rb:15: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/authentication_controller.rb:15: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/auth/login" for 127.0.0.1 at 2022-06-28 21:24:54 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harsh@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 204ms (Views: 0.7ms | ActiveRecord: 3.0ms | Allocations: 4376)
+
+
+Started POST "/auth/login" for 127.0.0.1 at 2022-06-28 21:25:02 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harsh@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 197ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 687)
+
+
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/auth/login?email=harsh@gmail.ocm&password=[FILTERED]" for 127.0.0.1 at 2022-06-29 11:02:28 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"harsh@gmail.ocm", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harsh@gmail.ocm"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 16ms (Views: 1.4ms | ActiveRecord: 1.2ms | Allocations: 18797)
+
+
+Started POST "/auth/login?email=harsh@gmail.ocm&password=[FILTERED]" for 127.0.0.1 at 2022-06-29 11:03:08 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"harsh@gmail.ocm", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harsh@gmail.ocm"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 15ms (Views: 0.4ms | ActiveRecord: 2.6ms | Allocations: 665)
+
+
+Started POST "/auth/login?email=harsh@gmail.ocm&password=[FILTERED]" for 127.0.0.1 at 2022-06-29 11:03:16 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"harsh@gmail.ocm", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harsh@gmail.ocm"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 401 Unauthorized in 7ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 662)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started POST "/auth/login?email=harsh@gmail.ocm&password=[FILTERED]" for 127.0.0.1 at 2022-06-29 11:04:13 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"harsh@gmail.ocm", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harsh@gmail.ocm"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 401 Unauthorized in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 647)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Count (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/auth?name=Harsh&username=Harsh2306&phone=8141283730&email=harsh@gmail.com&password=[FILTERED]" for 127.0.0.1 at 2022-06-29 11:08:11 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/auth"):
+  
+Started POST "/authname=Harsh&username=Harsh2306&phone=8141283730&email=harsh@gmail.com&password=harsh123?name=Harsh&username=Harsh2306&phone=8141283730&email=harsh@gmail.com&passoword=harsh123" for 127.0.0.1 at 2022-06-29 11:09:17 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/authname=Harsh&username=Harsh2306&phone=8141283730&email=harsh@gmail.com&password=harsh123"):
+  
+Started POST "/auth/loginname=Harsh&username=Harsh2306&phone=8141283730&email=harsh@gmail.com&password=harsh123name=Harsh&username=Harsh2306&phone=8141283730&email=harsh@gmail.com&passoword=harsh123" for 127.0.0.1 at 2022-06-29 11:10:19 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/auth/loginname=Harsh&username=Harsh2306&phone=8141283730&email=harsh@gmail.com&password=harsh123name=Harsh&username=Harsh2306&phone=8141283730&email=harsh@gmail.com&passoword=harsh123"):
+  
+Started POST "/" for 127.0.0.1 at 2022-06-29 11:10:53 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/auth/login?name=Harsh&username=Harsh2306&phone=8141283730&email=harsh@gmail.com&password=[FILTERED]" for 127.0.0.1 at 2022-06-29 11:12:02 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harsh@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 29ms (Views: 11.4ms | ActiveRecord: 1.5ms | Allocations: 18792)
+
+
+Started POST "/users?name=Harsh&username=Harsh2306&phone=8141283730&email=harsh@gmail.com&password=[FILTERED]" for 127.0.0.1 at 2022-06-29 11:13:00 +0530
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Harsh", "username"=>"Harsh2306", "phone"=>"8141283730", "email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Harsh2306"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (3.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "phone", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Harsh"], ["username", "Harsh2306"], ["email", "harsh@gmail.com"], ["phone", "8141283730"], ["created_at", "2022-06-29 05:43:00.502290"], ["updated_at", "2022-06-29 05:43:00.502290"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 201 Created in 234ms (Views: 6.3ms | ActiveRecord: 6.8ms | Allocations: 10949)
+
+
+Started POST "/auth/login/?email=harsh@gmail.com&password=[FILTERED]" for 127.0.0.1 at 2022-06-29 11:14:01 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harsh@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 195ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 934)
+
+
+Started POST "/auth/login/?email=harsh@gmail.com&password=[FILTERED]" for 127.0.0.1 at 2022-06-29 11:31:43 +0530
+Processing by AuthenticationController#login as */*
+  Parameters: {"email"=>"harsh@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "harsh@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 206ms (Views: 0.4ms | ActiveRecord: 5.2ms | Allocations: 3747)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBlog (20220629071837)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.0ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" bigserial primary key, "title" character varying NOT NULL, "body" text NOT NULL, "view_count" integer, "published_Date" timestamp(6), "is_active" boolean DEFAULT TRUE, "is_delete" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220629071837"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/blogs?title=Mikhail%20Tal&body=Mikhail%20Nekhemyevich%20Tal[a]%20(9%20November%201936%20%E2%80%93%2028%20June%201992)[1]%20was%20a%20Soviet%20Latvian%20chess%20player%20and%20the%20eighth%20World%20Chess%20Champion.%20He%20is%20considered%20a%20creative%20genius%20within%20the%20game%20of%20chess%20and%20one%20of%20its%20best%20ever%20players.%20Tal%20played%20in%20an%20attacking%20and%20daring%20combinatorial%20style.[2][3]%20His%20play%20was%20known%20above%20all%20for%20improvisation%20and%20unpredictability.%20It%20has%20been%20said%20that%20%22Every%20game%20for%20him%20was%20as%20inimitable%20and%20invaluable%20as%20a%20poem%22.[4]%20His%20nickname%20was%20%22Misha%22,%20a%20diminutive%20for%20Mikhail,%20and%20he%20earned%20the%20nickname%20%22The%20Magician%20from%20Riga%22.%20Both%20The%20Mammoth%20Book%20of%20the%20World%27s%20Greatest%20Chess%20Games[5]%20and%20Modern%20Chess%20Brilliancies[6]%20include%20more%20games%20by%20Tal%20than%20any%20other%20player.%20He%20also%20held%20the%20record%20for%20the%20longest%20unbeaten%20streak%20in%20competitive%20chess%20history%20with%2095%20games%20(46%20wins,%2049%20draws)%20between%2023%20October%201973%20and%2016%20October%201974,%20until%20Ding%20Liren%27s%20streak%20of%20100%20games%20(29%20wins,%2071%20draws)%20between%209%20August%202017%20and%2011%20November%202018.[7][8]%20In%20addition,%20Tal%20was%20a%20highly%20regarded%20chess%20writer.%0A%0ATal%20died%20on%2028%20June%201992%20in%20Moscow,%20Russia.%20The%20Mikhail%20Tal%20Memorial%20chess%20tournament%20has%20been%20held%20in%20Moscow%20annually%20since%202006.&view_count=22&published_Date=15/05/2005" for 127.0.0.1 at 2022-06-29 13:31:22 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:54: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/blogs_controller.rb:54: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/blogs_controller.rb:54: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/blogs?title=Mikhail%20Tal&body=Mikhail%20Nekhemyevich%20Tal[a]%20(9%20November%201936%20%E2%80%93%2028%20June%201992)[1]%20was%20a%20Soviet%20Latvian%20chess%20player%20and%20the%20eighth%20World%20Chess%20Champion.%20He%20is%20considered%20a%20creative%20genius%20within%20the%20game%20of%20chess%20and%20one%20of%20its%20best%20ever%20players.%20Tal%20played%20in%20an%20attacking%20and%20daring%20combinatorial%20style.[2][3]%20His%20play%20was%20known%20above%20all%20for%20improvisation%20and%20unpredictability.%20It%20has%20been%20said%20that%20%22Every%20game%20for%20him%20was%20as%20inimitable%20and%20invaluable%20as%20a%20poem%22.[4]%20His%20nickname%20was%20%22Misha%22,%20a%20diminutive%20for%20Mikhail,%20and%20he%20earned%20the%20nickname%20%22The%20Magician%20from%20Riga%22.%20Both%20The%20Mammoth%20Book%20of%20the%20World%27s%20Greatest%20Chess%20Games[5]%20and%20Modern%20Chess%20Brilliancies[6]%20include%20more%20games%20by%20Tal%20than%20any%20other%20player.%20He%20also%20held%20the%20record%20for%20the%20longest%20unbeaten%20streak%20in%20competitive%20chess%20history%20with%2095%20games%20(46%20wins,%2049%20draws)%20between%2023%20October%201973%20and%2016%20October%201974,%20until%20Ding%20Liren%27s%20streak%20of%20100%20games%20(29%20wins,%2071%20draws)%20between%209%20August%202017%20and%2011%20November%202018.[7][8]%20In%20addition,%20Tal%20was%20a%20highly%20regarded%20chess%20writer.%0A%0ATal%20died%20on%2028%20June%201992%20in%20Moscow,%20Russia.%20The%20Mikhail%20Tal%20Memorial%20chess%20tournament%20has%20been%20held%20in%20Moscow%20annually%20since%202006.&view_count=22&published_Date=15/05/2005" for 127.0.0.1 at 2022-06-29 13:31:58 +0530
+Processing by BlogsController#create as */*
+  Parameters: {"title"=>"Mikhail Tal", "body"=>"Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006.", "view_count"=>"22", "published_Date"=>"15/05/2005"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 156)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/concerns/json_web_token.rb:12:in `jwt_decode'
+app/controllers/application_controller.rb:19:in `authenticate_request'
+Started POST "/blogs?title=Mikhail%20Tal&body=Mikhail%20Nekhemyevich%20Tal[a]%20(9%20November%201936%20%E2%80%93%2028%20June%201992)[1]%20was%20a%20Soviet%20Latvian%20chess%20player%20and%20the%20eighth%20World%20Chess%20Champion.%20He%20is%20considered%20a%20creative%20genius%20within%20the%20game%20of%20chess%20and%20one%20of%20its%20best%20ever%20players.%20Tal%20played%20in%20an%20attacking%20and%20daring%20combinatorial%20style.[2][3]%20His%20play%20was%20known%20above%20all%20for%20improvisation%20and%20unpredictability.%20It%20has%20been%20said%20that%20%22Every%20game%20for%20him%20was%20as%20inimitable%20and%20invaluable%20as%20a%20poem%22.[4]%20His%20nickname%20was%20%22Misha%22,%20a%20diminutive%20for%20Mikhail,%20and%20he%20earned%20the%20nickname%20%22The%20Magician%20from%20Riga%22.%20Both%20The%20Mammoth%20Book%20of%20the%20World%27s%20Greatest%20Chess%20Games[5]%20and%20Modern%20Chess%20Brilliancies[6]%20include%20more%20games%20by%20Tal%20than%20any%20other%20player.%20He%20also%20held%20the%20record%20for%20the%20longest%20unbeaten%20streak%20in%20competitive%20chess%20history%20with%2095%20games%20(46%20wins,%2049%20draws)%20between%2023%20October%201973%20and%2016%20October%201974,%20until%20Ding%20Liren%27s%20streak%20of%20100%20games%20(29%20wins,%2071%20draws)%20between%209%20August%202017%20and%2011%20November%202018.[7][8]%20In%20addition,%20Tal%20was%20a%20highly%20regarded%20chess%20writer.%0A%0ATal%20died%20on%2028%20June%201992%20in%20Moscow,%20Russia.%20The%20Mikhail%20Tal%20Memorial%20chess%20tournament%20has%20been%20held%20in%20Moscow%20annually%20since%202006.&view_count=22&published_Date=15/05/2005" for 127.0.0.1 at 2022-06-29 13:36:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#create as */*
+  Parameters: {"title"=>"Mikhail Tal", "body"=>"Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006.", "view_count"=>"22", "published_Date"=>"15/05/2005"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 164)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/concerns/json_web_token.rb:12:in `jwt_decode'
+app/controllers/application_controller.rb:19:in `authenticate_request'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/blogs?title=Mikhail%20Tal&body=Mikhail%20Nekhemyevich%20Tal[a]%20(9%20November%201936%20%E2%80%93%2028%20June%201992)[1]%20was%20a%20Soviet%20Latvian%20chess%20player%20and%20the%20eighth%20World%20Chess%20Champion.%20He%20is%20considered%20a%20creative%20genius%20within%20the%20game%20of%20chess%20and%20one%20of%20its%20best%20ever%20players.%20Tal%20played%20in%20an%20attacking%20and%20daring%20combinatorial%20style.[2][3]%20His%20play%20was%20known%20above%20all%20for%20improvisation%20and%20unpredictability.%20It%20has%20been%20said%20that%20%22Every%20game%20for%20him%20was%20as%20inimitable%20and%20invaluable%20as%20a%20poem%22.[4]%20His%20nickname%20was%20%22Misha%22,%20a%20diminutive%20for%20Mikhail,%20and%20he%20earned%20the%20nickname%20%22The%20Magician%20from%20Riga%22.%20Both%20The%20Mammoth%20Book%20of%20the%20World%27s%20Greatest%20Chess%20Games[5]%20and%20Modern%20Chess%20Brilliancies[6]%20include%20more%20games%20by%20Tal%20than%20any%20other%20player.%20He%20also%20held%20the%20record%20for%20the%20longest%20unbeaten%20streak%20in%20competitive%20chess%20history%20with%2095%20games%20(46%20wins,%2049%20draws)%20between%2023%20October%201973%20and%2016%20October%201974,%20until%20Ding%20Liren%27s%20streak%20of%20100%20games%20(29%20wins,%2071%20draws)%20between%209%20August%202017%20and%2011%20November%202018.[7][8]%20In%20addition,%20Tal%20was%20a%20highly%20regarded%20chess%20writer.%0A%0ATal%20died%20on%2028%20June%201992%20in%20Moscow,%20Russia.%20The%20Mikhail%20Tal%20Memorial%20chess%20tournament%20has%20been%20held%20in%20Moscow%20annually%20since%202006.&view_count=22&published_Date=15/05/2005" for 127.0.0.1 at 2022-06-29 13:42:10 +0530
+Processing by BlogsController#create as */*
+  Parameters: {"title"=>"Mikhail Tal", "body"=>"Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006.", "view_count"=>"22", "published_Date"=>"15/05/2005"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `authenticate_request'
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 3.0ms | Allocations: 22978)
+
+
+  
+NameError (uninitialized constant BlogsController::Blog):
+  
+app/controllers/blogs_controller.rb:12:in `create'
+Started POST "/blogs?title=Mikhail%20Tal&body=Mikhail%20Nekhemyevich%20Tal[a]%20(9%20November%201936%20%E2%80%93%2028%20June%201992)[1]%20was%20a%20Soviet%20Latvian%20chess%20player%20and%20the%20eighth%20World%20Chess%20Champion.%20He%20is%20considered%20a%20creative%20genius%20within%20the%20game%20of%20chess%20and%20one%20of%20its%20best%20ever%20players.%20Tal%20played%20in%20an%20attacking%20and%20daring%20combinatorial%20style.[2][3]%20His%20play%20was%20known%20above%20all%20for%20improvisation%20and%20unpredictability.%20It%20has%20been%20said%20that%20%22Every%20game%20for%20him%20was%20as%20inimitable%20and%20invaluable%20as%20a%20poem%22.[4]%20His%20nickname%20was%20%22Misha%22,%20a%20diminutive%20for%20Mikhail,%20and%20he%20earned%20the%20nickname%20%22The%20Magician%20from%20Riga%22.%20Both%20The%20Mammoth%20Book%20of%20the%20World%27s%20Greatest%20Chess%20Games[5]%20and%20Modern%20Chess%20Brilliancies[6]%20include%20more%20games%20by%20Tal%20than%20any%20other%20player.%20He%20also%20held%20the%20record%20for%20the%20longest%20unbeaten%20streak%20in%20competitive%20chess%20history%20with%2095%20games%20(46%20wins,%2049%20draws)%20between%2023%20October%201973%20and%2016%20October%201974,%20until%20Ding%20Liren%27s%20streak%20of%20100%20games%20(29%20wins,%2071%20draws)%20between%209%20August%202017%20and%2011%20November%202018.[7][8]%20In%20addition,%20Tal%20was%20a%20highly%20regarded%20chess%20writer.%0A%0ATal%20died%20on%2028%20June%201992%20in%20Moscow,%20Russia.%20The%20Mikhail%20Tal%20Memorial%20chess%20tournament%20has%20been%20held%20in%20Moscow%20annually%20since%202006.&view_count=22&published_Date=15/05/2005" for 127.0.0.1 at 2022-06-29 13:46:29 +0530
+Processing by BlogsController#create as */*
+  Parameters: {"title"=>"Mikhail Tal", "body"=>"Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006.", "view_count"=>"22", "published_Date"=>"15/05/2005"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 400 Bad Request in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 856)
+
+
+Started POST "/blogs?title=Mikhail%20Tal&body=Mikhail%20Nekhemyevich%20Tal[a]%20(9%20November%201936%20%E2%80%93%2028%20June%201992)[1]%20was%20a%20Soviet%20Latvian%20chess%20player%20and%20the%20eighth%20World%20Chess%20Champion.%20He%20is%20considered%20a%20creative%20genius%20within%20the%20game%20of%20chess%20and%20one%20of%20its%20best%20ever%20players.%20Tal%20played%20in%20an%20attacking%20and%20daring%20combinatorial%20style.[2][3]%20His%20play%20was%20known%20above%20all%20for%20improvisation%20and%20unpredictability.%20It%20has%20been%20said%20that%20%22Every%20game%20for%20him%20was%20as%20inimitable%20and%20invaluable%20as%20a%20poem%22.[4]%20His%20nickname%20was%20%22Misha%22,%20a%20diminutive%20for%20Mikhail,%20and%20he%20earned%20the%20nickname%20%22The%20Magician%20from%20Riga%22.%20Both%20The%20Mammoth%20Book%20of%20the%20World%27s%20Greatest%20Chess%20Games[5]%20and%20Modern%20Chess%20Brilliancies[6]%20include%20more%20games%20by%20Tal%20than%20any%20other%20player.%20He%20also%20held%20the%20record%20for%20the%20longest%20unbeaten%20streak%20in%20competitive%20chess%20history%20with%2095%20games%20(46%20wins,%2049%20draws)%20between%2023%20October%201973%20and%2016%20October%201974,%20until%20Ding%20Liren%27s%20streak%20of%20100%20games%20(29%20wins,%2071%20draws)%20between%209%20August%202017%20and%2011%20November%202018.[7][8]%20In%20addition,%20Tal%20was%20a%20highly%20regarded%20chess%20writer.%0A%0ATal%20died%20on%2028%20June%201992%20in%20Moscow,%20Russia.%20The%20Mikhail%20Tal%20Memorial%20chess%20tournament%20has%20been%20held%20in%20Moscow%20annually%20since%202006.&view_count=22&published_Date=15/05/2005" for 127.0.0.1 at 2022-06-29 13:46:37 +0530
+Processing by BlogsController#create as */*
+  Parameters: {"title"=>"Mikhail Tal", "body"=>"Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006.", "view_count"=>"22", "published_Date"=>"15/05/2005"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 4.3ms | Allocations: 5347)
+
+
+  
+NameError (uninitialized constant BlogsController::Blog):
+  
+app/controllers/blogs_controller.rb:12:in `create'
+Started POST "/blogs?title=Mikhail%20Tal&body=Mikhail%20Nekhemyevich%20Tal[a]%20(9%20November%201936%20%E2%80%93%2028%20June%201992)[1]%20was%20a%20Soviet%20Latvian%20chess%20player%20and%20the%20eighth%20World%20Chess%20Champion.%20He%20is%20considered%20a%20creative%20genius%20within%20the%20game%20of%20chess%20and%20one%20of%20its%20best%20ever%20players.%20Tal%20played%20in%20an%20attacking%20and%20daring%20combinatorial%20style.[2][3]%20His%20play%20was%20known%20above%20all%20for%20improvisation%20and%20unpredictability.%20It%20has%20been%20said%20that%20%22Every%20game%20for%20him%20was%20as%20inimitable%20and%20invaluable%20as%20a%20poem%22.[4]%20His%20nickname%20was%20%22Misha%22,%20a%20diminutive%20for%20Mikhail,%20and%20he%20earned%20the%20nickname%20%22The%20Magician%20from%20Riga%22.%20Both%20The%20Mammoth%20Book%20of%20the%20World%27s%20Greatest%20Chess%20Games[5]%20and%20Modern%20Chess%20Brilliancies[6]%20include%20more%20games%20by%20Tal%20than%20any%20other%20player.%20He%20also%20held%20the%20record%20for%20the%20longest%20unbeaten%20streak%20in%20competitive%20chess%20history%20with%2095%20games%20(46%20wins,%2049%20draws)%20between%2023%20October%201973%20and%2016%20October%201974,%20until%20Ding%20Liren%27s%20streak%20of%20100%20games%20(29%20wins,%2071%20draws)%20between%209%20August%202017%20and%2011%20November%202018.[7][8]%20In%20addition,%20Tal%20was%20a%20highly%20regarded%20chess%20writer.%0A%0ATal%20died%20on%2028%20June%201992%20in%20Moscow,%20Russia.%20The%20Mikhail%20Tal%20Memorial%20chess%20tournament%20has%20been%20held%20in%20Moscow%20annually%20since%202006.&view_count=22&published_Date=15/05/2005" for 127.0.0.1 at 2022-06-29 13:46:42 +0530
+Processing by BlogsController#create as */*
+  Parameters: {"title"=>"Mikhail Tal", "body"=>"Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006.", "view_count"=>"22", "published_Date"=>"15/05/2005"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 400 Bad Request in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 235)
+
+
+Started POST "/blogs?title=Mikhail%20Tal&body=Mikhail%20Nekhemyevich%20Tal[a]%20(9%20November%201936%20%E2%80%93%2028%20June%201992)[1]%20was%20a%20Soviet%20Latvian%20chess%20player%20and%20the%20eighth%20World%20Chess%20Champion.%20He%20is%20considered%20a%20creative%20genius%20within%20the%20game%20of%20chess%20and%20one%20of%20its%20best%20ever%20players.%20Tal%20played%20in%20an%20attacking%20and%20daring%20combinatorial%20style.[2][3]%20His%20play%20was%20known%20above%20all%20for%20improvisation%20and%20unpredictability.%20It%20has%20been%20said%20that%20%22Every%20game%20for%20him%20was%20as%20inimitable%20and%20invaluable%20as%20a%20poem%22.[4]%20His%20nickname%20was%20%22Misha%22,%20a%20diminutive%20for%20Mikhail,%20and%20he%20earned%20the%20nickname%20%22The%20Magician%20from%20Riga%22.%20Both%20The%20Mammoth%20Book%20of%20the%20World%27s%20Greatest%20Chess%20Games[5]%20and%20Modern%20Chess%20Brilliancies[6]%20include%20more%20games%20by%20Tal%20than%20any%20other%20player.%20He%20also%20held%20the%20record%20for%20the%20longest%20unbeaten%20streak%20in%20competitive%20chess%20history%20with%2095%20games%20(46%20wins,%2049%20draws)%20between%2023%20October%201973%20and%2016%20October%201974,%20until%20Ding%20Liren%27s%20streak%20of%20100%20games%20(29%20wins,%2071%20draws)%20between%209%20August%202017%20and%2011%20November%202018.[7][8]%20In%20addition,%20Tal%20was%20a%20highly%20regarded%20chess%20writer.%0A%0ATal%20died%20on%2028%20June%201992%20in%20Moscow,%20Russia.%20The%20Mikhail%20Tal%20Memorial%20chess%20tournament%20has%20been%20held%20in%20Moscow%20annually%20since%202006.&view_count=22&published_Date=15/05/2005" for 127.0.0.1 at 2022-06-29 13:48:38 +0530
+Processing by BlogsController#create as */*
+  Parameters: {"title"=>"Mikhail Tal", "body"=>"Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006.", "view_count"=>"22", "published_Date"=>"15/05/2005"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 2322)
+
+
+  
+NameError (uninitialized constant BlogsController::Blog):
+  
+app/controllers/blogs_controller.rb:12:in `create'
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+Started POST "/blogs?title=Mikhail%20Tal&body=Mikhail%20Nekhemyevich%20Tal[a]%20(9%20November%201936%20%E2%80%93%2028%20June%201992)[1]%20was%20a%20Soviet%20Latvian%20chess%20player%20and%20the%20eighth%20World%20Chess%20Champion.%20He%20is%20considered%20a%20creative%20genius%20within%20the%20game%20of%20chess%20and%20one%20of%20its%20best%20ever%20players.%20Tal%20played%20in%20an%20attacking%20and%20daring%20combinatorial%20style.[2][3]%20His%20play%20was%20known%20above%20all%20for%20improvisation%20and%20unpredictability.%20It%20has%20been%20said%20that%20%22Every%20game%20for%20him%20was%20as%20inimitable%20and%20invaluable%20as%20a%20poem%22.[4]%20His%20nickname%20was%20%22Misha%22,%20a%20diminutive%20for%20Mikhail,%20and%20he%20earned%20the%20nickname%20%22The%20Magician%20from%20Riga%22.%20Both%20The%20Mammoth%20Book%20of%20the%20World%27s%20Greatest%20Chess%20Games[5]%20and%20Modern%20Chess%20Brilliancies[6]%20include%20more%20games%20by%20Tal%20than%20any%20other%20player.%20He%20also%20held%20the%20record%20for%20the%20longest%20unbeaten%20streak%20in%20competitive%20chess%20history%20with%2095%20games%20(46%20wins,%2049%20draws)%20between%2023%20October%201973%20and%2016%20October%201974,%20until%20Ding%20Liren%27s%20streak%20of%20100%20games%20(29%20wins,%2071%20draws)%20between%209%20August%202017%20and%2011%20November%202018.[7][8]%20In%20addition,%20Tal%20was%20a%20highly%20regarded%20chess%20writer.%0A%0ATal%20died%20on%2028%20June%201992%20in%20Moscow,%20Russia.%20The%20Mikhail%20Tal%20Memorial%20chess%20tournament%20has%20been%20held%20in%20Moscow%20annually%20since%202006.&view_count=22&published_Date=15/05/2005" for 127.0.0.1 at 2022-06-29 13:53:56 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#create as */*
+  Parameters: {"title"=>"Mikhail Tal", "body"=>"Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006.", "view_count"=>"22", "published_Date"=>"15/05/2005"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:13:in `create'
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "view_count", "published_Date", "is_active", "is_delete", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Mikhail Tal"], ["body", "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006."], ["view_count", 22], ["published_Date", "2005-05-15 00:00:00"], ["is_active", true], ["is_delete", false], ["created_at", "2022-06-29 08:23:56.311359"], ["updated_at", "2022-06-29 08:23:56.311359"]]
+  ↳ app/controllers/blogs_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:13:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Blog (0.48ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.18ms)
+Completed 200 OK in 82ms (Views: 4.9ms | ActiveRecord: 8.1ms | Allocations: 31992)
+
+
+  [1m[36mBlog Load (1.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+Started GET "/blogs/1" for 127.0.0.1 at 2022-06-29 14:02:31 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 400 Bad Request in 1ms (Views: 0.5ms | Allocations: 407)
+
+
+Started GET "/blogs/1" for 127.0.0.1 at 2022-06-29 14:03:34 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 6.2ms | Allocations: 8971)
+
+
+  
+NoMethodError (undefined method `find_blogs' for #<BlogsController:0x0000000000d4a8>
+Did you mean?  find_blog):
+  
+activesupport (7.0.3) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.3) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.3) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.3) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.3) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.3) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.3) lib/active_support/callbacks.rb:106:in `run_callbacks'
+actionpack (7.0.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.3) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.3.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.3.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3.1) lib/rack/head.rb:12:in `call'
+activerecord (7.0.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3.1) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3.1) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/blogs/1" for 127.0.0.1 at 2022-06-29 14:04:09 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (1.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE (1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:53:in `find_blog'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 4.7ms | Allocations: 4672)
+
+
+  
+ActiveRecord::StatementInvalid (PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT "blogs".* FROM "blogs" WHERE (1) LIMIT $1
+                                             ^
+):
+  
+app/controllers/blogs_controller.rb:53:in `find_blog'
+Started GET "/blogs/1" for 127.0.0.1 at 2022-06-29 14:07:18 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:53:in `find_blog'
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 4.9ms | Allocations: 8893)
+
+
+  
+NameError (undefined local variable or method `blogs' for #<BlogsController:0x00000000014e38>
+Did you mean?  blogs_url):
+  
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/1" for 127.0.0.1 at 2022-06-29 14:07:46 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:53:in `find_blog'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 4.6ms | Allocations: 8788)
+
+
+  
+NameError (undefined local variable or method `blog' for #<BlogsController:0x00000000018b00>):
+  
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/1" for 127.0.0.1 at 2022-06-29 14:08:20 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:53:in `find_blog'
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 4.3ms | Allocations: 8818)
+
+
+  
+NameError (undefined local variable or method `blog' for #<BlogsController:0x0000000001c7f0>):
+  
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/1" for 127.0.0.1 at 2022-06-29 14:34:51 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:25:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Blog (0.34ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.97ms)
+Completed 200 OK in 76ms (Views: 1.8ms | ActiveRecord: 5.0ms | Allocations: 28327)
+
+
+Started POST "/blogs?title=Mikhail%20Botvinik&body=Mikhail%20Nekhemyevich%20Tal[a]%20(9%20November%201936%20%E2%80%93%2028%20June%201992)[1]%20was%20a%20Soviet%20Latvian%20chess%20player%20and%20the%20eighth%20World%20Chess%20Champion.%20He%20is%20considered%20a%20creative%20genius%20within%20the%20game%20of%20chess%20and%20one%20of%20its%20best%20ever%20players.%20Tal%20played%20in%20an%20attacking%20and%20daring%20combinatorial%20style.[2][3]%20His%20play%20was%20known%20above%20all%20for%20improvisation%20and%20unpredictability.%20It%20has%20been%20said%20that%20%22Every%20game%20for%20him%20was%20as%20inimitable%20and%20invaluable%20as%20a%20poem%22.[4]%20His%20nickname%20was%20%22Misha%22,%20a%20diminutive%20for%20Mikhail,%20and%20he%20earned%20the%20nickname%20%22The%20Magician%20from%20Riga%22.%20Both%20The%20Mammoth%20Book%20of%20the%20World%27s%20Greatest%20Chess%20Games[5]%20and%20Modern%20Chess%20Brilliancies[6]%20include%20more%20games%20by%20Tal%20than%20any%20other%20player.%20He%20also%20held%20the%20record%20for%20the%20longest%20unbeaten%20streak%20in%20competitive%20chess%20history%20with%2095%20games%20(46%20wins,%2049%20draws)%20between%2023%20October%201973%20and%2016%20October%201974,%20until%20Ding%20Liren%27s%20streak%20of%20100%20games%20(29%20wins,%2071%20draws)%20between%209%20August%202017%20and%2011%20November%202018.[7][8]%20In%20addition,%20Tal%20was%20a%20highly%20regarded%20chess%20writer.%0A%0ATal%20died%20on%2028%20June%201992%20in%20Moscow,%20Russia.%20The%20Mikhail%20Tal%20Memorial%20chess%20tournament%20has%20been%20held%20in%20Moscow%20annually%20since%202006.&view_count=2&published_Date=23/02/2021" for 127.0.0.1 at 2022-06-29 14:35:48 +0530
+Processing by BlogsController#create as */*
+  Parameters: {"title"=>"Mikhail Botvinik", "body"=>"Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006.", "view_count"=>"2", "published_Date"=>"23/02/2021"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:13:in `create'
+  [1m[36mBlog Create (0.5ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "view_count", "published_Date", "is_active", "is_delete", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Mikhail Botvinik"], ["body", "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006."], ["view_count", 2], ["published_Date", "2021-02-23 00:00:00"], ["is_active", true], ["is_delete", false], ["created_at", "2022-06-29 09:05:48.329746"], ["updated_at", "2022-06-29 09:05:48.329746"]]
+  ↳ app/controllers/blogs_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:13:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Blog (0.14ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.47ms)
+Completed 200 OK in 11ms (Views: 0.9ms | ActiveRecord: 2.7ms | Allocations: 3305)
+
+
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 14:38:49 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] No serializer found for resource: #<Blog id: 1, title: "Mikhail Tal", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 22, published_Date: "2005-05-15 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 08:23:56.311359000 +0000", updated_at: "2022-06-29 08:23:56.311359000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Blog::ActiveRecord_Relation (0.34ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (7.82ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.6ms | Allocations: 3297)
+
+
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 14:54:50 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:50:in `destroy'
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 4.9ms | Allocations: 29635)
+
+
+  
+NoMethodError (undefined method `[]=' for nil:NilClass):
+  
+app/controllers/blogs_controller.rb:51:in `destroy'
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 14:55:32 +0530
+Processing by BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:50:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 18ms (Views: 1.2ms | ActiveRecord: 7.5ms | Allocations: 7411)
+
+
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 14:57:36 +0530
+Processing by BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:39:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 200 OK in 21ms (Views: 1.4ms | ActiveRecord: 7.2ms | Allocations: 6965)
+
+
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 14:58:50 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:39:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Blog (0.14ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.62ms)
+Completed 200 OK in 71ms (Views: 1.5ms | ActiveRecord: 8.6ms | Allocations: 30689)
+
+
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 15:00:05 +0530
+Processing by BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:39:in `destroy'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 4.5ms | Allocations: 6750)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/blogs_controller.rb:41:in `destroy'
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 15:01:58 +0530
+  
+SyntaxError (/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:40: syntax error, unexpected '=', expecting `end'
+    blog(params[:is_delete]) = true
+                             ^
+):
+  
+app/controllers/blogs_controller.rb:40: syntax error, unexpected '=', expecting `end'
+app/controllers/blogs_controller.rb:40: syntax error, unexpected '=', expecting `end'
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 15:02:35 +0530
+  
+SyntaxError (/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:40: syntax error, unexpected '=', expecting ']'
+    blog(params[:is_delete = true])
+                           ^
+):
+  
+app/controllers/blogs_controller.rb:40: syntax error, unexpected '=', expecting ']'
+app/controllers/blogs_controller.rb:40: syntax error, unexpected '=', expecting ']'
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 15:03:00 +0530
+Processing by BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:39:in `destroy'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 5.1ms | Allocations: 8696)
+
+
+  
+NoMethodError (undefined method `blog' for #<BlogsController:0x00000000018588>):
+  
+app/controllers/blogs_controller.rb:40:in `destroy'
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 15:03:43 +0530
+Processing by BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:39:in `destroy'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 6.8ms | Allocations: 8626)
+
+
+  
+NoMethodError (undefined method `blog' for #<BlogsController:0x0000000001c278>):
+  
+app/controllers/blogs_controller.rb:40:in `destroy'
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 15:04:19 +0530
+  
+SyntaxError (/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:40: syntax error, unexpected '=', expecting `end'
+    [:is_delete] = true
+                 ^
+):
+  
+app/controllers/blogs_controller.rb:40: syntax error, unexpected '=', expecting `end'
+app/controllers/blogs_controller.rb:40: syntax error, unexpected '=', expecting `end'
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 15:05:41 +0530
+Processing by BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:39:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Blog (0.14ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.67ms)
+Completed 200 OK in 21ms (Views: 1.1ms | ActiveRecord: 5.8ms | Allocations: 7504)
+
+
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 15:06:36 +0530
+Processing by BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:39:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Blog (0.15ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.89ms)
+Completed 200 OK in 19ms (Views: 1.5ms | ActiveRecord: 7.7ms | Allocations: 7486)
+
+
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 15:07:28 +0530
+Processing by BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:39:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Blog (0.24ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.95ms)
+Completed 200 OK in 23ms (Views: 1.7ms | ActiveRecord: 5.4ms | Allocations: 7469)
+
+
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Update (0.3ms)[0m  [1m[33mUPDATE "blogs" SET "view_count" = $1, "updated_at" = $2 WHERE "blogs"."id" = $3[0m  [["view_count", 5], ["updated_at", "2022-06-29 09:42:26.870464"], ["id", 2]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+Started DELETE "/blogs/2" for 127.0.0.1 at 2022-06-29 15:14:40 +0530
+Processing by BlogsController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:40:in `destroy'
+  [1m[36mBlog Update (0.4ms)[0m  [1m[33mUPDATE "blogs" SET "is_delete" = $1, "updated_at" = $2 WHERE "blogs"."id" = $3[0m  [["is_delete", true], ["updated_at", "2022-06-29 09:44:40.584446"], ["id", 2]]
+  ↳ app/controllers/blogs_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:40:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Blog (0.14ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.62ms)
+Completed 200 OK in 29ms (Views: 1.5ms | ActiveRecord: 8.5ms | Allocations: 11615)
+
+
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/blogs?title=Rohit%20Sharma&body=Mikhail%20Nekhemyevich%20Tal[a]%20(9%20November%201936%20%E2%80%93%2028%20June%201992)[1]%20was%20a%20Soviet%20Latvian%20chess%20player%20and%20the%20eighth%20World%20Chess%20Champion.%20He%20is%20considered%20a%20creative%20genius%20within%20the%20game%20of%20chess%20and%20one%20of%20its%20best%20ever%20players.%20Tal%20played%20in%20an%20attacking%20and%20daring%20combinatorial%20style.[2][3]%20His%20play%20was%20known%20above%20all%20for%20improvisation%20and%20unpredictability.%20It%20has%20been%20said%20that%20%22Every%20game%20for%20him%20was%20as%20inimitable%20and%20invaluable%20as%20a%20poem%22.[4]%20His%20nickname%20was%20%22Misha%22,%20a%20diminutive%20for%20Mikhail,%20and%20he%20earned%20the%20nickname%20%22The%20Magician%20from%20Riga%22.%20Both%20The%20Mammoth%20Book%20of%20the%20World%27s%20Greatest%20Chess%20Games[5]%20and%20Modern%20Chess%20Brilliancies[6]%20include%20more%20games%20by%20Tal%20than%20any%20other%20player.%20He%20also%20held%20the%20record%20for%20the%20longest%20unbeaten%20streak%20in%20competitive%20chess%20history%20with%2095%20games%20(46%20wins,%2049%20draws)%20between%2023%20October%201973%20and%2016%20October%201974,%20until%20Ding%20Liren%27s%20streak%20of%20100%20games%20(29%20wins,%2071%20draws)%20between%209%20August%202017%20and%2011%20November%202018.[7][8]%20In%20addition,%20Tal%20was%20a%20highly%20regarded%20chess%20writer.%0A%0ATal%20died%20on%2028%20June%201992%20in%20Moscow,%20Russia.%20The%20Mikhail%20Tal%20Memorial%20chess%20tournament%20has%20been%20held%20in%20Moscow%20annually%20since%202006.&view_count=23&published_Date=23/06/2008" for 127.0.0.1 at 2022-06-29 15:25:31 +0530
+Processing by BlogsController#create as */*
+  Parameters: {"title"=>"Rohit Sharma", "body"=>"Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006.", "view_count"=>"23", "published_Date"=>"23/06/2008"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:13:in `create'
+  [1m[36mBlog Create (1.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "view_count", "published_Date", "is_active", "is_delete", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Rohit Sharma"], ["body", "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006."], ["view_count", 23], ["published_Date", "2008-06-23 00:00:00"], ["is_active", true], ["is_delete", false], ["created_at", "2022-06-29 09:55:31.799115"], ["updated_at", "2022-06-29 09:55:31.799115"]]
+  ↳ app/controllers/blogs_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:13:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Blog (0.19ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.62ms)
+Completed 200 OK in 24ms (Views: 1.0ms | ActiveRecord: 9.9ms | Allocations: 5889)
+
+
+Started POST "/blogs?title=magnus%20Calrsen&body=Mikhail%20Nekhemyevich%20Tal[a]%20(9%20November%201936%20%E2%80%93%2028%20June%201992)[1]%20was%20a%20Soviet%20Latvian%20chess%20player%20and%20the%20eighth%20World%20Chess%20Champion.%20He%20is%20considered%20a%20creative%20genius%20within%20the%20game%20of%20chess%20and%20one%20of%20its%20best%20ever%20players.%20Tal%20played%20in%20an%20attacking%20and%20daring%20combinatorial%20style.[2][3]%20His%20play%20was%20known%20above%20all%20for%20improvisation%20and%20unpredictability.%20It%20has%20been%20said%20that%20%22Every%20game%20for%20him%20was%20as%20inimitable%20and%20invaluable%20as%20a%20poem%22.[4]%20His%20nickname%20was%20%22Misha%22,%20a%20diminutive%20for%20Mikhail,%20and%20he%20earned%20the%20nickname%20%22The%20Magician%20from%20Riga%22.%20Both%20The%20Mammoth%20Book%20of%20the%20World%27s%20Greatest%20Chess%20Games[5]%20and%20Modern%20Chess%20Brilliancies[6]%20include%20more%20games%20by%20Tal%20than%20any%20other%20player.%20He%20also%20held%20the%20record%20for%20the%20longest%20unbeaten%20streak%20in%20competitive%20chess%20history%20with%2095%20games%20(46%20wins,%2049%20draws)%20between%2023%20October%201973%20and%2016%20October%201974,%20until%20Ding%20Liren%27s%20streak%20of%20100%20games%20(29%20wins,%2071%20draws)%20between%209%20August%202017%20and%2011%20November%202018.[7][8]%20In%20addition,%20Tal%20was%20a%20highly%20regarded%20chess%20writer.%0A%0ATal%20died%20on%2028%20June%201992%20in%20Moscow,%20Russia.%20The%20Mikhail%20Tal%20Memorial%20chess%20tournament%20has%20been%20held%20in%20Moscow%20annually%20since%202006.&view_count=2306&published_Date=2/07/1985" for 127.0.0.1 at 2022-06-29 15:26:47 +0530
+Processing by BlogsController#create as */*
+  Parameters: {"title"=>"magnus Calrsen", "body"=>"Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006.", "view_count"=>"2306", "published_Date"=>"2/07/1985"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:13:in `create'
+  [1m[36mBlog Create (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "view_count", "published_Date", "is_active", "is_delete", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "magnus Calrsen"], ["body", "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 June 1992)[1] was a Soviet Latvian chess player and the eighth World Chess Champion. He is considered a creative genius within the game of chess and one of its best ever players. Tal played in an attacking and daring combinatorial style.[2][3] His play was known above all for improvisation and unpredictability. It has been said that \"Every game for him was as inimitable and invaluable as a poem\".[4] His nickname was \"Misha\", a diminutive for Mikhail, and he earned the nickname \"The Magician from Riga\". Both The Mammoth Book of the World's Greatest Chess Games[5] and Modern Chess Brilliancies[6] include more games by Tal than any other player. He also held the record for the longest unbeaten streak in competitive chess history with 95 games (46 wins, 49 draws) between 23 October 1973 and 16 October 1974, until Ding Liren's streak of 100 games (29 wins, 71 draws) between 9 August 2017 and 11 November 2018.[7][8] In addition, Tal was a highly regarded chess writer.\n\nTal died on 28 June 1992 in Moscow, Russia. The Mikhail Tal Memorial chess tournament has been held in Moscow annually since 2006."], ["view_count", 2306], ["published_Date", "1985-07-02 00:00:00"], ["is_active", true], ["is_delete", false], ["created_at", "2022-06-29 09:56:47.960787"], ["updated_at", "2022-06-29 09:56:47.960787"]]
+  ↳ app/controllers/blogs_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:13:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Blog (0.17ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.53ms)
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 2.3ms | Allocations: 2753)
+
+
+  [1m[36mBlog Load (1.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+Started DELETE "/blogs/1" for 127.0.0.1 at 2022-06-29 15:28:23 +0530
+Processing by BlogsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blogs_controller.rb:40:in `destroy'
+  [1m[36mBlog Update (0.6ms)[0m  [1m[33mUPDATE "blogs" SET "is_delete" = $1, "updated_at" = $2 WHERE "blogs"."id" = $3[0m  [["is_delete", true], ["updated_at", "2022-06-29 09:58:23.627355"], ["id", 1]]
+  ↳ app/controllers/blogs_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blogs_controller.rb:40:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Blog (0.23ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.69ms)
+Completed 200 OK in 11ms (Views: 1.2ms | ActiveRecord: 3.2ms | Allocations: 3123)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 15:34:23 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 3.8ms | Allocations: 11349)
+
+
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `is_active' for #<ActiveRecord::Relation [#<Blog id: 1, title: "Mikhail Tal", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 22, published_Date: "2005-05-15 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 08:23:56.311359000 +0000", updated_at: "2022-06-29 09:58:23.627355000 +0000">, #<Blog id: 2, title: "Mikhail Botvinik", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 5, published_Date: "2021-02-23 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 09:05:48.329746000 +0000", updated_at: "2022-06-29 09:44:40.584446000 +0000">, #<Blog id: 3, title: "Rohit Sharma", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 23, published_Date: "2008-06-23 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:55:31.799115000 +0000", updated_at: "2022-06-29 09:55:31.799115000 +0000">, #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">]>):
+  
+app/controllers/blogs_controller.rb:5:in `index'
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 15:39:01 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 6.5ms | Allocations: 7067)
+
+
+  
+NoMethodError (undefined method `is_active' for Blog:Class):
+  
+app/controllers/blogs_controller.rb:4:in `index'
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 15:39:53 +0530
+  
+SyntaxError (/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:4: syntax error, unexpected ':'
+    if Blog.is_active: true && Blog.is_delete: false
+                     ^
+/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:4: syntax error, unexpected ':', expecting `end'
+...active: true && Blog.is_delete: false
+...                              ^
+/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:49: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/blogs_controller.rb:4: syntax error, unexpected ':'
+app/controllers/blogs_controller.rb:4: syntax error, unexpected ':', expecting `end'
+app/controllers/blogs_controller.rb:49: syntax error, unexpected `end', expecting end-of-input
+app/controllers/blogs_controller.rb:4: syntax error, unexpected ':'
+app/controllers/blogs_controller.rb:4: syntax error, unexpected ':', expecting `end'
+app/controllers/blogs_controller.rb:49: syntax error, unexpected `end', expecting end-of-input
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 15:42:26 +0530
+  
+SyntaxError (/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:4: syntax error, unexpected ':'
+    if Blog.is_active: true && Blog.is_delete: false
+                     ^
+/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:4: syntax error, unexpected ':', expecting `end'
+...active: true && Blog.is_delete: false
+...                              ^
+/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:49: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/blogs_controller.rb:4: syntax error, unexpected ':'
+app/controllers/blogs_controller.rb:4: syntax error, unexpected ':', expecting `end'
+app/controllers/blogs_controller.rb:49: syntax error, unexpected `end', expecting end-of-input
+app/controllers/blogs_controller.rb:4: syntax error, unexpected ':'
+app/controllers/blogs_controller.rb:4: syntax error, unexpected ':', expecting `end'
+app/controllers/blogs_controller.rb:49: syntax error, unexpected `end', expecting end-of-input
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 15:42:56 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 3.2ms | Allocations: 7017)
+
+
+  
+NoMethodError (undefined method `is_active' for Blog:Class):
+  
+app/controllers/blogs_controller.rb:4:in `index'
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 15:44:01 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.1ms | Allocations: 8968)
+
+
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `is_active' for #<ActiveRecord::Relation [#<Blog id: 1, title: "Mikhail Tal", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 22, published_Date: "2005-05-15 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 08:23:56.311359000 +0000", updated_at: "2022-06-29 09:58:23.627355000 +0000">, #<Blog id: 2, title: "Mikhail Botvinik", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 5, published_Date: "2021-02-23 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 09:05:48.329746000 +0000", updated_at: "2022-06-29 09:44:40.584446000 +0000">, #<Blog id: 3, title: "Rohit Sharma", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 23, published_Date: "2008-06-23 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:55:31.799115000 +0000", updated_at: "2022-06-29 09:55:31.799115000 +0000">, #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">]>):
+  
+app/controllers/blogs_controller.rb:5:in `index'
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBlog Load (0.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 15:49:57 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.9ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 117582ms (ActiveRecord: 6.0ms | Allocations: 85016)
+
+
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `is_active' for #<ActiveRecord::Relation [#<Blog id: 1, title: "Mikhail Tal", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 22, published_Date: "2005-05-15 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 08:23:56.311359000 +0000", updated_at: "2022-06-29 09:58:23.627355000 +0000">, #<Blog id: 2, title: "Mikhail Botvinik", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 5, published_Date: "2021-02-23 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 09:05:48.329746000 +0000", updated_at: "2022-06-29 09:44:40.584446000 +0000">, #<Blog id: 3, title: "Rohit Sharma", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 23, published_Date: "2008-06-23 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:55:31.799115000 +0000", updated_at: "2022-06-29 09:55:31.799115000 +0000">, #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">]>):
+  
+app/controllers/blogs_controller.rb:6:in `index'
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 15:52:05 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.9ms | Allocations: 21550)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/blogs_controller.rb:4:in `index'
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 15:52:24 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 3.4ms | Allocations: 3937)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/blogs_controller.rb:4:in `index'
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 15:53:28 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/blogs_controller.rb:5:in `index'
+  [1m[36mCACHE Blog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/blogs_controller.rb:5:in `index'
+  [1m[36mCACHE Blog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 228603ms (ActiveRecord: 8.0ms | Allocations: 89524)
+
+
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `is_active' for #<ActiveRecord::Relation [#<Blog id: 1, title: "Mikhail Tal", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 22, published_Date: "2005-05-15 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 08:23:56.311359000 +0000", updated_at: "2022-06-29 09:58:23.627355000 +0000">, #<Blog id: 2, title: "Mikhail Botvinik", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 5, published_Date: "2021-02-23 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 09:05:48.329746000 +0000", updated_at: "2022-06-29 09:44:40.584446000 +0000">, #<Blog id: 3, title: "Rohit Sharma", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 23, published_Date: "2008-06-23 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:55:31.799115000 +0000", updated_at: "2022-06-29 09:55:31.799115000 +0000">, #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">]>):
+  
+app/controllers/blogs_controller.rb:6:in `index'
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 15:57:57 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.7ms | Allocations: 21554)
+
+
+  
+ArgumentError (Unknown validator: 'DefaultValidator'):
+  
+app/models/blog.rb:3:in `<class:Blog>'
+app/models/blog.rb:1:in `<main>'
+app/controllers/blogs_controller.rb:4:in `index'
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 16:01:27 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 3.0ms | Allocations: 21576)
+
+
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/blog.rb:3:in `<class:Blog>'
+app/models/blog.rb:1:in `<main>'
+app/controllers/blogs_controller.rb:4:in `index'
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 16:01:54 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.7ms | Allocations: 4090)
+
+
+  
+ArgumentError (Unknown validator: 'NullValidator'):
+  
+app/models/blog.rb:5:in `<class:Blog>'
+app/models/blog.rb:1:in `<main>'
+app/controllers/blogs_controller.rb:4:in `index'
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 16:02:05 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.9ms | Allocations: 3978)
+
+
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/blog.rb:3:in `<class:Blog>'
+app/models/blog.rb:1:in `<main>'
+app/controllers/blogs_controller.rb:4:in `index'
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 16:05:09 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.9ms | Allocations: 21575)
+
+
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/blog.rb:3:in `<class:Blog>'
+app/models/blog.rb:1:in `<main>'
+app/controllers/blogs_controller.rb:4:in `index'
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 16:13:58 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.0ms | Allocations: 21680)
+
+
+  
+ArgumentError (Unknown validator: 'NullValidator'):
+  
+app/models/blog.rb:5:in `<class:Blog>'
+app/models/blog.rb:1:in `<main>'
+app/controllers/blogs_controller.rb:4:in `index'
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 16:14:50 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.4ms | Allocations: 29763)
+
+
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `is_active' for #<ActiveRecord::Relation [#<Blog id: 1, title: "Mikhail Tal", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 22, published_Date: "2005-05-15 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 08:23:56.311359000 +0000", updated_at: "2022-06-29 09:58:23.627355000 +0000">, #<Blog id: 2, title: "Mikhail Botvinik", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 5, published_Date: "2021-02-23 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 09:05:48.329746000 +0000", updated_at: "2022-06-29 09:44:40.584446000 +0000">, #<Blog id: 3, title: "Rohit Sharma", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 23, published_Date: "2008-06-23 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:55:31.799115000 +0000", updated_at: "2022-06-29 09:55:31.799115000 +0000">, #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">]>):
+  
+app/controllers/blogs_controller.rb:5:in `index'
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 16:16:30 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 3.7ms | Allocations: 29731)
+
+
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `is_active' for #<ActiveRecord::Relation [#<Blog id: 1, title: "Mikhail Tal", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 22, published_Date: "2005-05-15 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 08:23:56.311359000 +0000", updated_at: "2022-06-29 09:58:23.627355000 +0000">, #<Blog id: 2, title: "Mikhail Botvinik", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 5, published_Date: "2021-02-23 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 09:05:48.329746000 +0000", updated_at: "2022-06-29 09:44:40.584446000 +0000">, #<Blog id: 3, title: "Rohit Sharma", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 23, published_Date: "2008-06-23 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:55:31.799115000 +0000", updated_at: "2022-06-29 09:55:31.799115000 +0000">, #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">]>):
+  
+app/controllers/blogs_controller.rb:5:in `index'
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2[0m  [["is_active", true], ["is_delete", false]]
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2[0m  [["is_active", true], ["is_delete", true]]
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 16:24:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2[0m  [["is_active", true], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] No serializer found for resource: #<Blog id: 3, title: "Rohit Sharma", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 23, published_Date: "2008-06-23 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:55:31.799115000 +0000", updated_at: "2022-06-29 09:55:31.799115000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Blog::ActiveRecord_Relation (0.2ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.8ms)
+Completed 200 OK in 33ms (Views: 10.8ms | ActiveRecord: 5.3ms | Allocations: 29529)
+
+
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2[0m  [["is_active", true], ["is_delete", false]]
+Started GET "/blogs" for 127.0.0.1 at 2022-06-29 16:32:41 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2[0m  [["is_active", true], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (15.13ms)
+Completed 200 OK in 36ms (Views: 14.9ms | ActiveRecord: 5.1ms | Allocations: 30783)
+
+
