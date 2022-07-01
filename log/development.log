@@ -3539,3 +3539,1686 @@ Processing by UsersController#update as */*
 Completed 200 OK in 213ms (Views: 1.5ms | ActiveRecord: 6.5ms | Allocations: 8161)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20220701053751)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "title" character varying NOT NULL, "comment_text" text, "is_delete" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220701053751"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mBlog Load (3.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangesInCommentModel (20220701061537)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "table" RENAME COLUMN "old_column" TO "new_column"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2298625266859227285)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangesInCommentModel (20220701061537)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "comments" RENAME COLUMN "title" TO "comment_title"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2298625266859227285)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangesInCommentModel (20220701061537)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "comments" RENAME COLUMN "title" TO "comment_title"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2298625266859227285)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangesInCommentModel (20220701061537)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "comments" RENAME COLUMN "title" TO "comment_title"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "comments" ADD "blog_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220701061537"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2298625266859227285)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBlog Load (0.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 3]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Started POST "/blogs" for 127.0.0.1 at 2022-07-01 15:17:39 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#create as */*
+  Parameters: {"comment_title"=>"title123", "comment_text"=>"fehjbfubfubifuebuiebfiuebfbfe", "blog_id"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 400 Bad Request in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 889)
+
+
+Started POST "/comments" for 127.0.0.1 at 2022-07-01 15:20:53 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NameError (uninitialized constant CommentConcerns::CommentsController
+Did you mean?  CommentConcerns::CommentController):
+  
+app/controllers/comments_controller.rb:2:in `<class:CommentsController>'
+app/controllers/comments_controller.rb:1:in `<main>'
+Started POST "/comments" for 127.0.0.1 at 2022-07-01 15:22:15 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#create as */*
+  Parameters: {"comment_title"=>"title123", "comment_text"=>"fehjbfubfubifuebuiebfiuebfbfe", "blog_id"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 400 Bad Request in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 894)
+
+
+Started POST "/comments" for 127.0.0.1 at 2022-07-01 15:24:42 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#create as */*
+  Parameters: {"comment_title"=>"title123", "comment_text"=>"fehjbfubfubifuebuiebfiuebfbfe", "blog_id"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 400 Bad Request in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 894)
+
+
+Started POST "/comments" for 127.0.0.1 at 2022-07-01 15:26:18 +0530
+Processing by CommentsController#create as */*
+  Parameters: {"comment_title"=>"title123", "comment_text"=>"fehjbfubfubifuebuiebfiuebfbfe", "blog_id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 8.3ms | Allocations: 29336)
+
+
+  
+NoMethodError (undefined method `save?' for #<Comment id: nil, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: nil, updated_at: nil, blog_id: 1>
+Did you mean?  save
+               save!):
+  
+app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+Started POST "/comments" for 127.0.0.1 at 2022-07-01 15:26:56 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#create as */*
+  Parameters: {"comment_title"=>"title123", "comment_text"=>"fehjbfubfubifuebuiebfiuebfbfe", "blog_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 5.6ms | Allocations: 32288)
+
+
+  
+NameError (Rails couldn't find a valid model for Blog association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.):
+  
+app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+Started POST "/comments" for 127.0.0.1 at 2022-07-01 15:29:19 +0530
+Processing by CommentsController#create as */*
+  Parameters: {"comment_title"=>"title123", "comment_text"=>"fehjbfubfubifuebuiebfiuebfbfe", "blog_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mComment Create (3.7ms)[0m  [1m[32mINSERT INTO "comments" ("comment_title", "comment_text", "is_delete", "created_at", "updated_at", "blog_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comment_title", "title123"], ["comment_text", "fehjbfubfubifuebuiebfiuebfbfe"], ["is_delete", false], ["created_at", "2022-07-01 09:59:19.192823"], ["updated_at", "2022-07-01 09:59:19.192823"], ["blog_id", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+[active_model_serializers] Rendered CommentSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.71ms)
+Completed 200 OK in 61ms (Views: 6.7ms | ActiveRecord: 16.3ms | Allocations: 19988)
+
+
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 1]]
+Started POST "/comments" for 127.0.0.1 at 2022-07-01 15:35:38 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#create as */*
+  Parameters: {"comment_title"=>"Chess", "comment_text"=>"fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", "blog_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment_title", "comment_text", "is_delete", "created_at", "updated_at", "blog_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comment_title", "Chess"], ["comment_text", "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe"], ["is_delete", false], ["created_at", "2022-07-01 10:05:38.504131"], ["updated_at", "2022-07-01 10:05:38.504131"], ["blog_id", 2]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+[active_model_serializers] Rendered CommentSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.26ms)
+Completed 200 OK in 53ms (Views: 8.9ms | ActiveRecord: 8.4ms | Allocations: 44374)
+
+
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started POST "/comments" for 127.0.0.1 at 2022-07-01 15:36:14 +0530
+Processing by CommentsController#create as */*
+  Parameters: {"comment_title"=>"cricket", "comment_text"=>"ddbebuiwbfiufbiuwbfibfibwfuibfeiwf", "blog_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment_title", "comment_text", "is_delete", "created_at", "updated_at", "blog_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comment_title", "cricket"], ["comment_text", "ddbebuiwbfiufbiuwbfibfibwfuibfeiwf"], ["is_delete", false], ["created_at", "2022-07-01 10:06:14.801679"], ["updated_at", "2022-07-01 10:06:14.801679"], ["blog_id", 2]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+[active_model_serializers] Rendered CommentSerializer with ActiveModelSerializers::Adapter::Attributes (0.21ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.59ms)
+Completed 200 OK in 12ms (Views: 1.0ms | ActiveRecord: 3.4ms | Allocations: 3552)
+
+
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 2]]
+Started PATCH "/comments/3" for 127.0.0.1 at 2022-07-01 15:38:53 +0530
+Processing by CommentsController#update as */*
+  Parameters: {"comment_text"=>"ABCDEFGHIJKLMNOPQRST", "password"=>"[FILTERED]", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 766)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment without an ID):
+  
+app/controllers/concerns/CommentConcerns/CommentController.rb:25:in `update'
+Started PATCH "/comments/3" for 127.0.0.1 at 2022-07-01 15:39:38 +0530
+Processing by CommentsController#update as */*
+  Parameters: {"comment_text"=>"ABCDEFGHIJKLMNOPQRST", "password"=>"[FILTERED]", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 404 Not Found in 14ms (ActiveRecord: 3.9ms | Allocations: 5075)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment without an ID):
+  
+app/controllers/concerns/CommentConcerns/CommentController.rb:25:in `update'
+Started PATCH "/comments/3" for 127.0.0.1 at 2022-07-01 15:41:01 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#update as */*
+  Parameters: {"comment_text"=>"ABCDEFGHIJKLMNOPQRST", "password"=>"[FILTERED]", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 404 Not Found in 24ms (ActiveRecord: 4.4ms | Allocations: 25362)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment without an ID):
+  
+app/controllers/concerns/CommentConcerns/CommentController.rb:25:in `update'
+Started PATCH "/comments/3" for 127.0.0.1 at 2022-07-01 15:41:22 +0530
+Processing by CommentsController#update as */*
+  Parameters: {"comment_text"=>"ABCDEFGHIJKLMNOPQRST", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 698)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment without an ID):
+  
+app/controllers/concerns/CommentConcerns/CommentController.rb:25:in `update'
+Started PATCH "/comments/2" for 127.0.0.1 at 2022-07-01 15:41:42 +0530
+Processing by CommentsController#update as */*
+  Parameters: {"comment_text"=>"ABCDEFGHIJKLMNOPQRST", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 691)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment without an ID):
+  
+app/controllers/concerns/CommentConcerns/CommentController.rb:25:in `update'
+Started PATCH "/comments/3" for 127.0.0.1 at 2022-07-01 15:42:03 +0530
+Processing by CommentsController#update as */*
+  Parameters: {"comment_text"=>"ABCDEFGHIJKLMNOPQRST", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:25:in `update'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 7.2ms | Allocations: 9521)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/CommentConcerns/CommentController.rb:26:in `update'
+Started PATCH "/comments/3" for 127.0.0.1 at 2022-07-01 15:42:49 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#update as */*
+  Parameters: {"comment_text"=>"ABCDEFGHIJKLMNOPQRST", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:25:in `update'
+Completed 404 Not Found in 27ms (ActiveRecord: 5.4ms | Allocations: 26533)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment with 'id'={"id"=>"3", "comment_text"=>"ABCDEFGHIJKLMNOPQRST"}):
+  
+app/controllers/concerns/CommentConcerns/CommentController.rb:25:in `update'
+Started PATCH "/comments/3" for 127.0.0.1 at 2022-07-01 15:46:08 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#update as */*
+  Parameters: {"comment_text"=>"ABCDEFGHIJKLMNOPQRST", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:25:in `update'
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 5.5ms | Allocations: 29864)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/concerns/CommentConcerns/CommentController.rb:26:in `update'
+Started PATCH "/comments/3" for 127.0.0.1 at 2022-07-01 15:47:24 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#update as */*
+  Parameters: {"comment_text"=>"ABCDEFGHIJKLMNOPQRST", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:25:in `update'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 4.4ms | Allocations: 30067)
+
+
+  
+ArgumentError (When assigning attributes, you must pass a hash as an argument, String passed.):
+  
+app/controllers/concerns/CommentConcerns/CommentController.rb:26:in `update'
+Started PATCH "/comments/3" for 127.0.0.1 at 2022-07-01 15:51:24 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#update as */*
+  Parameters: {"comment_text"=>"ABCDEFGHIJKLMNOPQRST", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:25:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:26:in `update'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:26:in `update'
+  [1m[36mComment Update (0.3ms)[0m  [1m[33mUPDATE "comments" SET "comment_text" = $1, "updated_at" = $2 WHERE "comments"."id" = $3[0m  [["comment_text", "ABCDEFGHIJKLMNOPQRST"], ["updated_at", "2022-07-01 10:21:24.836147"], ["id", 3]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:26:in `update'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:26:in `update'
+[active_model_serializers] Rendered CommentSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.8ms)
+Completed 200 OK in 48ms (Views: 3.8ms | ActiveRecord: 8.6ms | Allocations: 45058)
+
+
+Started GET "/comments/3" for 127.0.0.1 at 2022-07-01 15:51:47 +0530
+Processing by CommentsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:34:in `show'
+[active_model_serializers] Rendered CommentSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.82ms)
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.7ms | Allocations: 1404)
+
+
+Started GET "/comments/2" for 127.0.0.1 at 2022-07-01 15:52:47 +0530
+Processing by CommentsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:34:in `show'
+[active_model_serializers] Rendered CommentSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.06ms)
+Completed 200 OK in 17ms (Views: 1.5ms | ActiveRecord: 4.8ms | Allocations: 7991)
+
+
+Started POST "/comments" for 127.0.0.1 at 2022-07-01 15:55:06 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#create as */*
+  Parameters: {"comment_title"=>"Testing comment", "comment_text"=>"This is body of comment ", "blog_id"=>"3"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 400 Bad Request in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 894)
+
+
+Started POST "/comments" for 127.0.0.1 at 2022-07-01 15:55:58 +0530
+Processing by CommentsController#create as */*
+  Parameters: {"comment_title"=>"Testing comment", "comment_text"=>"This is body of comment ", "blog_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment_title", "comment_text", "is_delete", "created_at", "updated_at", "blog_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comment_title", "Testing comment"], ["comment_text", "This is body of comment "], ["is_delete", false], ["created_at", "2022-07-01 10:25:58.846255"], ["updated_at", "2022-07-01 10:25:58.846255"], ["blog_id", 3]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+[active_model_serializers] Rendered CommentSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.62ms)
+Completed 200 OK in 63ms (Views: 6.2ms | ActiveRecord: 13.1ms | Allocations: 41654)
+
+
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Update (0.3ms)[0m  [1m[33mUPDATE "comments" SET "is_delete" = $1, "updated_at" = $2 WHERE "comments"."id" = $3[0m  [["is_delete", true], ["updated_at", "2022-07-01 10:26:57.621567"], ["id", 4]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mComment Count (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Started POST "/comments" for 127.0.0.1 at 2022-07-01 15:58:12 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#create as */*
+  Parameters: {"comment_title"=>"Anish Giri", "comment_text"=>"huifinfuiefriejirogjoigjiorejriogjroijioejoirjioegioefiowe", "blog_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment_title", "comment_text", "is_delete", "created_at", "updated_at", "blog_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comment_title", "Anish Giri"], ["comment_text", "huifinfuiefriejirogjoigjiorejriogjroijioejoirjioegioefiowe"], ["is_delete", false], ["created_at", "2022-07-01 10:28:12.900286"], ["updated_at", "2022-07-01 10:28:12.900286"], ["blog_id", 1]]
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/concerns/CommentConcerns/CommentController.rb:16:in `create'
+[active_model_serializers] Rendered CommentSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.59ms)
+Completed 200 OK in 51ms (Views: 9.0ms | ActiveRecord: 8.9ms | Allocations: 44379)
+
+
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Update (0.4ms)[0m  [1m[33mUPDATE "comments" SET "is_delete" = $1, "updated_at" = $2 WHERE "comments"."id" = $3[0m  [["is_delete", true], ["updated_at", "2022-07-01 10:29:49.984787"], ["id", 5]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."is_delete" = $1[0m  [["is_delete", false]]
+  [1m[36mComment Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."is_delete" = $1[0m  [["is_delete", false]]
+Started GET "/comments" for 127.0.0.1 at 2022-07-01 16:01:03 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."is_delete" = $1[0m  [["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.99ms)
+Completed 200 OK in 31ms (Views: 8.8ms | ActiveRecord: 5.0ms | Allocations: 31092)
+
+
+  [1m[36mBlog Load (0.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/blogs" for 127.0.0.1 at 2022-07-01 16:07:54 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2[0m  [["is_active", true], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.52ms)
+Completed 200 OK in 33ms (Views: 10.0ms | ActiveRecord: 5.2ms | Allocations: 32585)
+
+
+  [1m[36mBlog Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2[0m  [["is_active", true], ["is_delete", false]]
+Started GET "/comments" for 127.0.0.1 at 2022-07-01 16:09:42 +0530
+Processing by CommentsController#index as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."is_delete" = $1[0m  [["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.21ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 3.4ms | Allocations: 7957)
+
+
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Update (0.7ms)[0m  [1m[33mUPDATE "comments" SET "updated_at" = $1, "blog_id" = $2 WHERE "comments"."id" = $3[0m  [["updated_at", "2022-07-01 10:41:40.340546"], ["blog_id", 4], ["id", 1]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Update (0.2ms)[0m  [1m[33mUPDATE "comments" SET "updated_at" = $1, "blog_id" = $2 WHERE "comments"."id" = $3[0m  [["updated_at", "2022-07-01 10:42:06.629151"], ["blog_id", 4], ["id", 2]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+Started GET "/blogs" for 127.0.0.1 at 2022-07-01 16:16:36 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2[0m  [["is_active", true], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.8ms)
+Completed 200 OK in 36ms (Views: 10.4ms | ActiveRecord: 5.5ms | Allocations: 32584)
+
+
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:16:49 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+  ↳ app/controllers/blogs_controller.rb:25:in `new'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.9ms | Allocations: 12207)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:18:19 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.32ms)
+Completed 200 OK in 36ms (Views: 5.5ms | ActiveRecord: 4.8ms | Allocations: 36581)
+
+
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:19:11 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.45ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (31.4ms)
+Completed 200 OK in 57ms (Views: 29.0ms | ActiveRecord: 9.5ms | Allocations: 17145)
+
+
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:20:03 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (0.8ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.97ms)
+Completed 500 Internal Server Error in 21ms (Views: 2.4ms | ActiveRecord: 6.0ms | Allocations: 10392)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:26:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:24:25 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 5.7ms | Allocations: 33748)
+
+
+  
+ArgumentError (wrong number of arguments (given 8, expected 4..5)):
+  
+app/controllers/application_controller.rb:6:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:25:33 +0530
+  
+SyntaxError (/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:25: syntax error, unexpected constant, expecting ')'
+...s Blog"  ActiveModelSerializers::SerializableResource.new(bl...
+...         ^~~~~~~~~~~~~~~~~~~~~~
+/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:25: syntax error, unexpected ')', expecting `end'
+...bleResource.new(blog.comments)))
+...                              ^
+):
+  
+app/controllers/blogs_controller.rb:25: syntax error, unexpected constant, expecting ')'
+app/controllers/blogs_controller.rb:25: syntax error, unexpected ')', expecting `end'
+app/controllers/blogs_controller.rb:25: syntax error, unexpected constant, expecting ')'
+app/controllers/blogs_controller.rb:25: syntax error, unexpected ')', expecting `end'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:25:44 +0530
+  
+SyntaxError (/home/aglowid/ror/backend_authentication/app/controllers/blogs_controller.rb:25: syntax error, unexpected ')', expecting `end'
+...leResource.new(blog.comments)))
+...                              ^
+):
+  
+app/controllers/blogs_controller.rb:25: syntax error, unexpected ')', expecting `end'
+app/controllers/blogs_controller.rb:25: syntax error, unexpected ')', expecting `end'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:25:59 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.25ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (16.47ms)
+Completed 200 OK in 40ms (Views: 14.8ms | ActiveRecord: 9.6ms | Allocations: 19239)
+
+
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:26:29 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 6.6ms | Allocations: 9493)
+
+
+  
+ArgumentError (wrong number of arguments (given 6, expected 4..5)):
+  
+app/controllers/application_controller.rb:6:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:27:15 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 5.6ms | Allocations: 33695)
+
+
+  
+ArgumentError (wrong number of arguments (given 6, expected 4..5)):
+  
+app/controllers/application_controller.rb:6:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:27:34 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (14.67ms)
+Completed 200 OK in 48ms (Views: 13.7ms | ActiveRecord: 8.7ms | Allocations: 19238)
+
+
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:32:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (8.5ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.01ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 4.9ms | Allocations: 35340)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:32:27 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (8.16ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.12ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 6.0ms | Allocations: 35297)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:33:48 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (9.2ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.51ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 6.4ms | Allocations: 35295)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:35:01 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (8.86ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.12ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 4.7ms | Allocations: 35356)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:44:15 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (7.99ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.4ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 4.6ms | Allocations: 35301)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:45:02 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.77ms)
+Completed 200 OK in 39ms (Views: 9.9ms | ActiveRecord: 10.5ms | Allocations: 19959)
+
+
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:45:29 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.67ms)
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.9ms | Allocations: 2574)
+
+
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:45:46 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (8.35ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.82ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 5.6ms | Allocations: 35303)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:48:14 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.2ms)
+Completed 200 OK in 44ms (Views: 9.8ms | ActiveRecord: 8.2ms | Allocations: 19944)
+
+
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:50:19 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.17ms)
+Completed 200 OK in 43ms (Views: 9.1ms | ActiveRecord: 6.7ms | Allocations: 42745)
+
+
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:50:40 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (8.15ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.35ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 5.5ms | Allocations: 12502)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 16:54:32 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (9.49ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.35ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 5.5ms | Allocations: 35347)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 17:03:46 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (15.93ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (16.39ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 8.1ms | Allocations: 7944)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 17:04:11 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (25.33ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (26.84ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 5.7ms | Allocations: 12568)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 17:05:10 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (11.73ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.82ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 5.5ms | Allocations: 12358)
+
+
+  
+NoMethodError (undefined method `comment_text' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comments):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 17:09:31 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (8.03ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.09ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 4.9ms | Allocations: 37617)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 17:12:00 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (9.07ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.01ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 7.3ms | Allocations: 12394)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 17:20:45 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (8.05ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (13.34ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 4.6ms | Allocations: 36951)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mBlog Load (0.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 17:36:09 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (8.36ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (14.41ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 5.2ms | Allocations: 36951)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/1" for 127.0.0.1 at 2022-07-01 17:36:16 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (10.05ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.51ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms | Allocations: 4912)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 1, title: "Mikhail Tal", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 22, published_Date: "2005-05-15 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 08:23:56.311359000 +0000", updated_at: "2022-06-29 09:58:23.627355000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/2" for 127.0.0.1 at 2022-07-01 17:36:20 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (14.83ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (18.93ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.6ms | Allocations: 4905)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 2, title: "Mikhail Botvinik", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 5, published_Date: "2021-02-23 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-29 09:05:48.329746000 +0000", updated_at: "2022-06-29 09:44:40.584446000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/6" for 127.0.0.1 at 2022-07-01 17:36:25 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (32.72ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (33.18ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.5ms | Allocations: 4957)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 6, title: "ah", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: nil, published_Date: "0202-02-22 00:00:00.000000000 +0000", is_active: true, is_delete: true, created_at: "2022-06-30 11:29:43.144657000 +0000", updated_at: "2022-06-30 12:38:10.187001000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/60" for 127.0.0.1 at 2022-07-01 17:36:29 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"60"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms | Allocations: 1212)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Blog with 'id'=60):
+  
+app/services/BlogService/blog_reader.rb:16:in `show'
+app/controllers/blogs_controller.rb:23:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 17:36:36 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (9.07ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.41ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms | Allocations: 4889)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 17:36:57 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (9.06ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.98ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 6.1ms | Allocations: 12450)
+
+
+  
+NoMethodError (undefined method `comment_title' for #<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">
+Did you mean?  comment_ids
+               comment_ids=):
+  
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 17:56:43 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.72ms)
+Completed 200 OK in 49ms (Views: 10.3ms | ActiveRecord: 8.6ms | Allocations: 31940)
+
+
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:01:08 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (8.43ms)
+[active_model_serializers]   [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (21.91ms)
+Completed 200 OK in 50ms (Views: 20.4ms | ActiveRecord: 7.8ms | Allocations: 42909)
+
+
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Count (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."is_delete" = $1[0m  [["is_delete", true]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."is_delete" = $1[0m  [["is_delete", true]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Update (0.9ms)[0m  [1m[33mUPDATE "comments" SET "updated_at" = $1, "blog_id" = $2 WHERE "comments"."id" = $3[0m  [["updated_at", "2022-07-01 12:42:35.613133"], ["blog_id", 4], ["id", 4]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:12:43 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (2.64ms)
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 4]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.19ms)
+Completed 200 OK in 47ms (Views: 12.5ms | ActiveRecord: 4.6ms | Allocations: 15438)
+
+
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:18:53 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (19.22ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (23.5ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 7.2ms | Allocations: 46664)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:20:58 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (17.03ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (21.01ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 7.9ms | Allocations: 46640)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:22:24 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 4.1ms | Allocations: 24164)
+
+
+  
+ArgumentError (The scope body needs to be callable.):
+  
+app/models/blog.rb:9:in `<class:Blog>'
+app/models/blog.rb:1:in `<main>'
+app/services/BlogService/blog_reader.rb:16:in `show'
+app/controllers/blogs_controller.rb:23:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:23:49 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (16.15ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (20.46ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 7.1ms | Allocations: 46666)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:29:56 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.2ms | Allocations: 21690)
+
+
+  
+SyntaxError (/home/aglowid/ror/backend_authentication/app/models/blog.rb:10: syntax error, unexpected '}', expecting `end'):
+  
+app/models/blog.rb:10: syntax error, unexpected '}', expecting `end'
+app/models/blog.rb:10: syntax error, unexpected '}', expecting `end'
+app/services/BlogService/blog_reader.rb:16:in `show'
+app/controllers/blogs_controller.rb:23:in `show'
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:30:20 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (27.21ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (32.94ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 7.6ms | Allocations: 28994)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:32:12 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (2.1ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (16.85ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (19.43ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 10.3ms | Allocations: 17001)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:32:25 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (16.24ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (18.35ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 12.4ms | Allocations: 17054)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mCACHE Comment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:32:36 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (11.84ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (15.03ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 7.6ms | Allocations: 17021)
+
+
+  [1m[36mCACHE Comment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:33:11 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (25.04ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (27.42ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 8.4ms | Allocations: 17015)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:36:42 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (15.56ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (19.17ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 7.4ms | Allocations: 46692)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>
+Did you mean?  acts_like?):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:39:14 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (1.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (13.07ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (16.36ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 8.5ms | Allocations: 17053)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:39:43 +0530
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (10.35ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (13.87ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 7.5ms | Allocations: 17008)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:25:in `show'
+  [1m[36mCACHE Comment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs/4" for 127.0.0.1 at 2022-07-01 18:43:15 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_reader.rb:16:in `show'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (6.8ms)
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 4], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (16.31ms)
+Completed 200 OK in 45ms (Views: 15.5ms | ActiveRecord: 6.5ms | Allocations: 43098)
+
+
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."is_delete" = $1[0m  [["is_delete", true]]
+  [1m[36mComment Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+Started GET "/blogs" for 127.0.0.1 at 2022-07-01 18:49:42 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2 /* loading for inspect */ LIMIT $3[0m  [["is_active", true], ["is_delete", false], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 8.5ms | Allocations: 12854)
+
+
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2 /* loading for inspect */ LIMIT $3[0m  [["is_active", true], ["is_delete", false], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Relation [#<Blog id: 4, title: "magnus Calrsen", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2306, published_Date: "1985-07-02 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-29 09:56:47.960787000 +0000", updated_at: "2022-06-29 09:56:47.960787000 +0000">, #<Blog id: 5, title: "Vishy Anand", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 2222, published_Date: "2022-02-22 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-30 11:28:27.943497000 +0000", updated_at: "2022-06-30 11:28:27.943497000 +0000">, #<Blog id: 8, title: "Alireza Firuza", body: "Mikhail Nekhemyevich Tal[a] (9 November 1936 – 28 ...", view_count: 11, published_Date: "2011-11-05 00:00:00.000000000 +0000", is_active: true, is_delete: false, created_at: "2022-06-30 13:17:28.637312000 +0000", updated_at: "2022-06-30 13:17:28.637312000 +0000">]>):
+  
+app/services/BlogService/blog_reader.rb:8:in `index'
+app/controllers/blogs_controller.rb:4:in `index'
+  [1m[36mCACHE Blog Load (0.0ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2 /* loading for inspect */ LIMIT $3[0m  [["is_active", true], ["is_delete", false], ["LIMIT", 11]]
+Started GET "/blogs" for 127.0.0.1 at 2022-07-01 18:55:18 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2 AND "blogs"."is_delete" = $3[0m  [["is_active", true], ["is_delete", false], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.73ms)
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 4], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 5], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 8], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (17.62ms)
+Completed 200 OK in 39ms (Views: 17.5ms | ActiveRecord: 6.5ms | Allocations: 18328)
+
+
+  [1m[36mBlog Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."is_active" = $1[0m  [["is_active", true]]
+  [1m[36mBlog Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."is_delete" = $1[0m  [["is_delete", false]]
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_delete" = $1[0m  [["is_delete", false]]
+  [1m[36mBlog Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."is_delete" = $1[0m  [["is_delete", false]]
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_delete" = $1[0m  [["is_delete", false]]
+Started GET "/blogs" for 127.0.0.1 at 2022-07-01 19:07:00 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2 AND "blogs"."is_delete" = $3[0m  [["is_active", true], ["is_delete", false], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.35ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (26.02ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 10.7ms | Allocations: 47422)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>
+Did you mean?  active_comments):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:6:in `index'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs" for 127.0.0.1 at 2022-07-01 19:07:59 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2 AND "blogs"."is_delete" = $3[0m  [["is_active", true], ["is_delete", false], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.24ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (27.26ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 6.7ms | Allocations: 47393)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>
+Did you mean?  active_comments):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:6:in `index'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs" for 127.0.0.1 at 2022-07-01 19:11:15 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2 AND "blogs"."is_delete" = $3[0m  [["is_active", true], ["is_delete", false], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.49ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.98ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 9.0ms | Allocations: 17765)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>
+Did you mean?  active_comments):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:6:in `index'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs" for 127.0.0.1 at 2022-07-01 19:12:59 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2 AND "blogs"."is_delete" = $3[0m  [["is_active", true], ["is_delete", false], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.14ms)
+[active_model_serializers]   [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (18.16ms)
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 7.2ms | Allocations: 17729)
+
+
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `active_post' for #<ActiveRecord::Associations::CollectionProxy [#<Comment id: 1, comment_title: "title123", comment_text: "fehjbfubfubifuebuiebfiuebfbfe", is_delete: false, created_at: "2022-07-01 09:59:19.192823000 +0000", updated_at: "2022-07-01 10:41:40.340546000 +0000", blog_id: 4>, #<Comment id: 2, comment_title: "Chess", comment_text: "fehjbfubfubifuebuiebfiuebfbfeweggsdsfewe", is_delete: false, created_at: "2022-07-01 10:05:38.504131000 +0000", updated_at: "2022-07-01 10:42:06.629151000 +0000", blog_id: 4>, #<Comment id: 4, comment_title: "Testing comment", comment_text: "This is body of comment ", is_delete: true, created_at: "2022-07-01 10:25:58.846255000 +0000", updated_at: "2022-07-01 12:42:35.613133000 +0000", blog_id: 4>]>
+Did you mean?  active_comments):
+  
+app/serializers/blog_serializer.rb:5:in `blog_comments'
+app/controllers/application_controller.rb:7:in `send_response'
+app/controllers/blogs_controller.rb:6:in `index'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["blog_id", 4], ["LIMIT", 11]]
+Started GET "/blogs" for 127.0.0.1 at 2022-07-01 19:14:41 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2 AND "blogs"."is_delete" = $3[0m  [["is_active", true], ["is_delete", false], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.64ms)
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 4], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 5], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 8], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (26.39ms)
+Completed 200 OK in 49ms (Views: 23.7ms | ActiveRecord: 7.7ms | Allocations: 45913)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2022-07-01 19:15:34 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2 AND "blogs"."is_delete" = $3[0m  [["is_active", true], ["is_delete", false], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.14ms)
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 4], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 5], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 8], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (19.28ms)
+Completed 200 OK in 38ms (Views: 15.8ms | ActiveRecord: 7.3ms | Allocations: 16259)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2022-07-01 19:15:42 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2 AND "blogs"."is_delete" = $3[0m  [["is_active", true], ["is_delete", false], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.54ms)
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 4], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 5], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 8], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (23.39ms)
+Completed 200 OK in 37ms (Views: 17.9ms | ActiveRecord: 9.9ms | Allocations: 16347)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2022-07-01 19:18:24 +0530
+Processing by BlogsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authenticate_request'
+[active_model_serializers]   [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."is_active" = $1 AND "blogs"."is_delete" = $2 AND "blogs"."is_delete" = $3[0m  [["is_active", true], ["is_delete", false], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.15ms)
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 4], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 5], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers]   [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1 AND "comments"."is_delete" = $2[0m  [["blog_id", 8], ["is_delete", false]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:7:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (29.9ms)
+Completed 200 OK in 54ms (Views: 24.3ms | ActiveRecord: 15.1ms | Allocations: 16424)
+
+

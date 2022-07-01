@@ -5,7 +5,7 @@ module BlogService
     end
 
     def index
-      if blog = Blog.where(is_active: true).where(is_delete: false)
+      if blog = Blog.where(is_active: true).where(is_delete: false).active_post
         return true,blog
       else
         return false,blog
@@ -19,7 +19,7 @@ module BlogService
 
     private
     def blog_params
-      @params.permit(:id,:title,:body,:view_count,:published_Date,:is_active,:is_delete)
+      @params.permit(:id,:title,:body,:view_count,:published_Date,:is_active,:is_delete,:blog_comments)
     end
   end
 end
