@@ -1,18 +1,24 @@
 class BlogsController < ApplicationController
 
   def index
-    res,blog = BlogService::BlogReader.new(blog_params).index
+    res,blog = BlogService::BlogReader.new(params).index
     if res
-      send_response(1, 200, "Employee listing", ActiveModelSerializers::SerializableResource.new(blog))
+      send_response(1, 200, "Blog listing", ActiveModelSerializers::SerializableResource.new(blog))
     else
       send_response(0,404,"Something went wrong",blog.errors)
     end
   end
 
   def create
-    res,blog = BlogService::BlogCreator.new(blog_params).create
+    #if params[:title].present? && params[:image].present?
+      res,blog = BlogService::BlogCreator.new(blog_params).create
+    #else
+      #send_response(0,404,"Please Fill title and image",blog.errors)
+    #end
+
     if res
       send_response(1, 200, "Blog Created", ActiveModelSerializers::SerializableResource.new(blog))
+
     else
       send_response(0,404,"Something went wrong",blog.errors)
     end
@@ -20,7 +26,7 @@ class BlogsController < ApplicationController
   end
 
   def show
-    res,blog = BlogService::BlogReader.new(blog_params).show
+    res,blog = BlogService::BlogReader.new(params).show
     if res
       send_response(1, 200, "Blog details", ActiveModelSerializers::SerializableResource.new(blog))
     else
@@ -38,7 +44,7 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    res,blog = BlogService::BlogCreator.new(blog_params).destroy
+    res,blog = BlogService::BlogCreator.new().destroy
     if res
       send_response(1, 200, "Is_Delete is changed", ActiveModelSerializers::SerializableResource.new(blog))
     else
@@ -46,9 +52,9 @@ class BlogsController < ApplicationController
     end
   end
 
-  private
+    private
 
-  def blog_params
-    params.permit(:id,:title,:body,:view_count,:published_Date,:is_active,:is_delete,:blog_comments)
-  end
+    def blog_params
+      params.permit(:id,:title,:body,:view_count,:published_date,:is_active,:is_delete,:blog_comments,:image,:blog_count)
+    end
 end

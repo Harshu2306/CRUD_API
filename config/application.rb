@@ -1,10 +1,12 @@
-require_relative "boot"
+  require_relative "boot"
 
 require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+#Rails.application.config.active_storage.variant_processor = :vips
+#require "active_storage/engine"
 
 module BackendAuthentication
   class Application < Rails::Application

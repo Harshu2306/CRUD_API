@@ -6,6 +6,7 @@ module BlogService
 
     def create
       blog = Blog.new(blog_params)
+      blog.image.attach(blog_params[:image])
       if blog.save
         return true,blog
       else
@@ -23,7 +24,7 @@ module BlogService
     end
 
     def destroy
-      blog=Blog.find(blog_params[:id])
+      blog=Blog.find(@params[:id])
       blog.update(is_delete: true)
 
       if blog.is_delete == true
@@ -35,7 +36,7 @@ module BlogService
 
     private
     def blog_params
-      @params.permit(:id,:title,:body,:view_count,:published_Date,:blog_comments)
+      @params.permit(:id,:title,:body,:view_count,:published_date,:blog_comments,:image,:blog_count)
     end
   end
 end
