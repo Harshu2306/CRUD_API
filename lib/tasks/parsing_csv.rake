@@ -1,6 +1,6 @@
 namespace :parse_csv do
   require 'csv'
-  desc "parsing csv file to print all data of it"
+  desc "Inserting csv data into rails database."
   task parsing_csv: :environment do
 
     csv_text = File.read('public/demo_filetest.csv')

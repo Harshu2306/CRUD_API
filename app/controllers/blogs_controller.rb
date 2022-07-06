@@ -10,15 +10,9 @@ class BlogsController < ApplicationController
   end
 
   def create
-    #if params[:title].present? && params[:image].present?
-      res,blog = BlogService::BlogCreator.new(blog_params).create
-    #else
-      #send_response(0,404,"Please Fill title and image",blog.errors)
-    #end
-
+    res,blog = BlogService::BlogCreator.new(blog_params).create
     if res
       send_response(1, 200, "Blog Created", ActiveModelSerializers::SerializableResource.new(blog))
-
     else
       send_response(0,404,"Something went wrong",blog.errors)
     end

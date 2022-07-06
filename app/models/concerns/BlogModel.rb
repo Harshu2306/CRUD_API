@@ -6,6 +6,7 @@ module BlogModel
     require 'active_support/core_ext'
     has_one_attached :image
     has_many :comments
+    has_one :like , as: :likeable
     validates :is_active, inclusion: { in: [ true, false ] }
     validates :is_delete, inclusion: { in: [ true, false ] }
     validates :title , presence: true
@@ -17,15 +18,5 @@ module BlogModel
     def image_url
       Rails.application.routes.url_helpers.url_for(image) if image.attached?
     end
-
-    #has_one_attached :file
-    #def height
-      #file.metadata['height']
-    #end
-
-    #def width
-      #file.metadata['width']
-    #end
-
   end
 end

@@ -4,7 +4,7 @@ module CommentConcerns
 
       def index
         if comment = Comment.where(is_delete: false)
-          send_response(1, 200, "Employee listing", ActiveModelSerializers::SerializableResource.new(comment))
+          send_response(1, 200, "Comment listing", ActiveModelSerializers::SerializableResource.new(comment))
         else
           send_response(1, 200, "Comment is deleted",{})
         end
@@ -12,7 +12,6 @@ module CommentConcerns
 
       def create
         comment = Comment.new(comment_params)
-
         if comment.save
           send_response(1, 200, "Comment is creatd", ActiveModelSerializers::SerializableResource.new(comment))
         else
@@ -36,13 +35,19 @@ module CommentConcerns
       end
 
       def destroy
-        Comment.destroy(comment_params[:id]) 
+        comment = Comment.find(params[:id])
+        if comment.present?
+        comment.destroy 
+        send_response(1, 200, "Comment is deleted",{})
+        else
+          send_response(1, 404, "Comment does not exists",{})
+        end
       end
 
       private 
 
       def comment_params
-        params.permit(:id,:blog_id,:comment_title,:comment_text)
+        params.permit(:blog_id,:comment_title,:comment_text)
       end
   end
 end
