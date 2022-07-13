@@ -1,0 +1,8 @@
+Blog ID,Title,Body,Comment_id,comment_title,comment_text
+205,Rohit,Rohit is cricketer,88,Rohit_blog_test_comment,Rohit is Captain.
+205,Rohit,Rohit is cricketer,89,Rohit_test_comment_2,Rohit is cricket player.
+206,Vidit,Vidit is chess player,90,Vidit_blog_test_comment,Vidit is d4 player.
+206,Vidit,Vidit is chess player,91,Vidit_test_comment_2,Vidit is at 2nd in rankings.
+198,Demo Blog,body of blog.,71,Testing from rails console,This is testing comment3
+204,Vlamdir Kraminik,body of blog.,86,test_comment,Vlamdir kraminik is wc.
+204,Vlamdir Kraminik,body of blog.,87,test_comment_2,Vlamdir is chess player.

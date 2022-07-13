@@ -1,52 +1,56 @@
 class NewsController < ApplicationController
-
-  def index
-    res,news = NewsService::NewsReader.new(params).index
-    if res
-      send_response(1, 200, "News listing", ActiveModelSerializers::SerializableResource.new(news))
-    else
-      end_response(0,404,"Something went wrong",news.errors)
+   def index
+    news = News.all
+    news = news.paginate(page: params[:page], per_page: 3)
+    page_no = params[:page].present? ? params[:page] : DEFAULT_PAGE
+    per_page = params[:per_page].present? ? params[:per_page] : PER_PAGE_RECORDS
+    meta = prepare_meta(news, total_record_count: news.count, page_no: page_no, per_page: per_page)
+    send_response(0, 200, "News Listing", ActiveModelSerializers::SerializableResource.new(news),meta)
     end
-  end
 
-  def create
-    res,news = NewsService::NewsCreator.new(news_params).create
-    if res
-      send_response(1, 200, "News Created", ActiveModelSerializers::SerializableResource.new(news))
-    else
-      send_response(0,404,"Something went wrong",news.errors)
+    def create
+      news = News.new(news_params)
+      if news.save
+        send_response(0, 200, "news is created", ActiveModelSerializers::SerializableResource.new(news))
+      else
+        send_response(1, 404, "Something went wrong",news.errors)
+      end
     end
-  end
 
-  def update
-    res,news = NewsService::NewsCreator.new(params).update
-    if res
-      send_response(1, 200, "Updating News", ActiveModelSerializers::SerializableResource.new(news))
-    else
-      send_response(0,404,"Something went wrong",news.errors)
+    def update
+      news = News.find(news_params[:id])
+      if news.update(news_params)
+        send_response(0, 200, "news is updated", ActiveModelSerializers::SerializableResource.new(news))
+      else
+        send_response(1, 404, "Something went wrong", news.errors)
+      end
     end
-  end
 
-  def show
-    res,news = NewsService::NewsReader.new(params).show
-    if res
-      send_response(1, 200, "News details", ActiveModelSerializers::SerializableResource.new(news))
-    else
-      send_response(0,404,"Something went wrong",news.errors)
+    def show
+      news = News.find(params[:id])
+      send_response(1, 200, "Your news is : ", ActiveModelSerializers::SerializableResource.new(news))
     end
-  end
 
-  def destroy
-    res,news = NewsService::NewsCreator.new().destroy
-    if res
-      send_response(1, 200, "Is_Delete is changed", ActiveModelSerializers::SerializableResource.new(news))
-    else
-      send_response(0,404,"Something went wrong", news.errors)
+    def destroy
+      news = News.find(params[:id])
+      if news.present?
+      news.destroy 
+      send_response(0, 200, "news is deleted",{})
+      else
+        send_response(1, 404, "news does not exists",{})
+      end
     end
-  end
 
-    private 
+
+    def add_like
+      news = News.find_by(id: params[:id])
+      news.increment!(:like_count)
+      send_response(0, 200, "Like_Count is incrementend By 1", ActiveModelSerializers::SerializableResource.new(news))
+    end
+
+    private
+
     def news_params
-      params.permit(:title,:body,:published_date,:news_count,:image)
+      params.permit(:id, :news_title, :news_body, :published_date, :like_count)
     end
 end

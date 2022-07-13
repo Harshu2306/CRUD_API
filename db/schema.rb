@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_06_130754) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_13_054525) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_06_130754) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "blog_count", default: 0
+    t.integer "like_count", default: 0
   end
 
   create_table "comments", force: :cascade do |t|
@@ -61,7 +62,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_06_130754) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "blog_id"
-    t.integer "news_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -73,14 +73,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_06_130754) do
   end
 
   create_table "news", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "body", null: false
+    t.string "news_title", null: false
+    t.string "news_body", null: false
     t.datetime "published_date"
-    t.integer "news_count", default: 0
-    t.boolean "is_active", default: true
-    t.boolean "is_delete", default: false
+    t.integer "like_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sneakers", force: :cascade do |t|
+    t.string "company"
+    t.string "sneaker_name"
+    t.integer "size", null: false
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

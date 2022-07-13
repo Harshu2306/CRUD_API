@@ -30,6 +30,7 @@ gem 'activestorage'
 gem "image_processing", ">= 1.2"
 gem 'active_storage_validations'
 gem 'mini_magick', '>= 4.9.5'
+gem 'will_paginate', '~> 3.3'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]

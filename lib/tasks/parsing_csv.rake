@@ -15,11 +15,9 @@ namespace :parse_csv do
       })
 
       blogs.comments.create({
-
         comment_title: csv[index]['comment_title'],
         comment_text: csv[index]['comment_text']
       })
     end
   end
-
 end

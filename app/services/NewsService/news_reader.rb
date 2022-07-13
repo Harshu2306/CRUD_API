@@ -20,7 +20,7 @@ module NewsService
         news.like.increment!(:like_count)
       else
         news.like = Like.new(like_count: 1)
-        news.like.save
+        news. like.save
       end
       return true,news
     end
