@@ -37,7 +37,7 @@ module BlogService
 
     private
     def blog_params
-      @params.permit(:id, :title, :body, :view_count, comments_attributes: [ :id, :blog_id, :comment_title, :comment_text ])
+      @params.permit(:id, :title, :body, :view_count, :like_count, comments_attributes: [ :id, :blog_id, :comment_title, :comment_text ])
     end
   end
 end

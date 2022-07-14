@@ -58,6 +58,6 @@ class BlogsController < ApplicationController
 
     private
     def blog_params
-      params.fetch(:blog,{}).permit(:id, :title, :body, :view_count, like_count, comments_attributes: [ :id, :blog_id, :comment_title, :comment_text ])
+      params.fetch(:blog,{}).permit(:id, :title, :body, :view_count, :like_count, comments_attributes: [ :id, :blog_id, :comment_title, :comment_text ])
     end
 end

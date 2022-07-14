@@ -33358,3 +33358,54 @@ Processing by BlogsController#index as */*
 Completed 200 OK in 72ms (Views: 38.6ms | ActiveRecord: 8.8ms | Allocations: 50980)
 
 
+Started POST "/blogs" for 127.0.0.1 at 2022-07-14 11:21:21 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#create as */*
+  Parameters: {"blog"=>{"title"=>"Vidit 1", "body"=>"Vidit is chess player", "view_count"=>"2222", "comments_attributes"=>[{"comment_title"=>"Vidit_blog_test_comment1", "comment_text"=>"Vidit is d4 player."}, {"comment_title"=>"Vidit_test_comment_21", "comment_text"=>"Vidit is at 2nd in rankings."}]}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36:in `authenticate_request'
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 10.0ms | Allocations: 27022)
+
+
+  
+NameError (undefined local variable or method `like_count' for #<BlogsController:0x0000000000b040>):
+  
+app/controllers/blogs_controller.rb:61:in `blog_params'
+app/controllers/blogs_controller.rb:16:in `create'
+Started POST "/blogs" for 127.0.0.1 at 2022-07-14 11:21:49 +0530
+Processing by BlogsController#create as */*
+  Parameters: {"blog"=>{"title"=>"Vidit 1", "body"=>"Vidit is chess player", "view_count"=>"2222", "comments_attributes"=>[{"comment_title"=>"Vidit_blog_test_comment1", "comment_text"=>"Vidit is d4 player."}, {"comment_title"=>"Vidit_test_comment_21", "comment_text"=>"Vidit is at 2nd in rankings."}]}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36:in `authenticate_request'
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 5.2ms | Allocations: 6789)
+
+
+  
+NameError (undefined local variable or method `like_count' for #<BlogsController:0x00000000010540>):
+  
+app/controllers/blogs_controller.rb:61:in `blog_params'
+app/controllers/blogs_controller.rb:16:in `create'
+Started POST "/blogs" for 127.0.0.1 at 2022-07-14 11:22:06 +0530
+Processing by BlogsController#create as */*
+  Parameters: {"blog"=>{"title"=>"Vidit 1", "body"=>"Vidit is chess player", "view_count"=>"2222", "comments_attributes"=>[{"comment_title"=>"Vidit_blog_test_comment1", "comment_text"=>"Vidit is d4 player."}, {"comment_title"=>"Vidit_test_comment_21", "comment_text"=>"Vidit is at 2nd in rankings."}]}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:36:in `authenticate_request'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/services/BlogService/blog_creator.rb:11:in `create'
+  [1m[36mBlog Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "blogs" WHERE "blogs"."title" = $1 LIMIT $2[0m  [["title", "Vidit 1"], ["LIMIT", 1]]
+  ↳ app/services/BlogService/blog_creator.rb:11:in `create'
+  [1m[36mBlog Create (3.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "view_count", "published_date", "is_active", "is_delete", "created_at", "updated_at", "blog_count", "like_count") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Vidit 1"], ["body", "Vidit is chess player"], ["view_count", 2222], ["published_date", nil], ["is_active", true], ["is_delete", false], ["created_at", "2022-07-14 05:56:59.346650"], ["updated_at", "2022-07-14 05:56:59.346650"], ["blog_count", 0], ["like_count", 0]]
+  ↳ app/services/BlogService/blog_creator.rb:11:in `create'
+  [1m[36mComment Create (3.9ms)[0m  [1m[32mINSERT INTO "comments" ("comment_title", "comment_text", "is_delete", "created_at", "updated_at", "blog_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comment_title", "Vidit_blog_test_comment1"], ["comment_text", "Vidit is d4 player."], ["is_delete", false], ["created_at", "2022-07-14 05:56:59.353641"], ["updated_at", "2022-07-14 05:56:59.353641"], ["blog_id", 207]]
+  ↳ app/services/BlogService/blog_creator.rb:11:in `create'
+  [1m[36mComment Create (0.9ms)[0m  [1m[32mINSERT INTO "comments" ("comment_title", "comment_text", "is_delete", "created_at", "updated_at", "blog_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comment_title", "Vidit_test_comment_21"], ["comment_text", "Vidit is at 2nd in rankings."], ["is_delete", false], ["created_at", "2022-07-14 05:56:59.360680"], ["updated_at", "2022-07-14 05:56:59.360680"], ["blog_id", 207]]
+  ↳ app/services/BlogService/blog_creator.rb:11:in `create'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/BlogService/blog_creator.rb:11:in `create'
+[active_model_serializers] Rendered BlogSerializer with ActiveModelSerializers::Adapter::Attributes (0.43ms)
+[active_model_serializers]   [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 207]]
+[active_model_serializers]   ↳ app/controllers/application_controller.rb:8:in `send_response'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (17.51ms)
+Completed 200 OK in 292398ms (Views: 28.4ms | ActiveRecord: 23.7ms | Allocations: 128633)
+
+
