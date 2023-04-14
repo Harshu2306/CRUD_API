@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
   include ApplicationHelper
   include JsonWebToken
 
-  before_action :authenticate_request
+  # before_action :authenticate_request
 
     def send_response(status, status_code, message, result, meta = {})
     render json: {
